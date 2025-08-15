@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazy Mama's Creations - Custom Band Merchandise & Upcycled Fashion</title>
+    <meta name="description" content="Unique handmade band merchandise shirts on vintage flannel. Custom upcycled clothing featuring classic rock, punk, and alternative music designs.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Floating Music Notes -->
+    <div class="floating-notes">
+        <div class="music-note">♪</div>
+        <div class="music-note">♫</div>
+        <div class="music-note">♪</div>
+        <div class="music-note">♫</div>
+    </div>
+
+    <!-- Mouse Orbiting Elements -->
+    <div id="orbitingTeddy" class="orbiting-element">
+        <img src="Photos/tedpurp.png" alt="Orbiting Teddy" class="teddy-orbiter">
+    </div>
+    <div id="orbitingNote" class="orbiting-element">
+        <span class="note-orbiter">♪</span>
+    </div>
+    <div id="orbitingHeart" class="orbiting-element">
+        <span class="heart-orbiter">❤️</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <img src="Photos/logo.png" alt="Crazy Mama's Creations Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>Crazy Mama's Creations</h1>
+                    <p class="tagline typewriter">Handmade • Upcycled • Rock & Roll</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#behind-scenes">Behind the Scenes</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Vintage Flannel Meets Classic Rock</h2>
+            <p>Handcrafted upcycled shirts featuring your favorite bands on premium vintage flannel. Each piece is one-of-a-kind, just like your music taste.</p>
+            <div class="hero-buttons">
+                <a href="#gallery" class="btn btn-primary">Shop Collection</a>
+                <a href="#contact" class="btn btn-secondary">Custom Orders</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="Photos/Krissy.jpeg" alt="Collection of custom band shirts" loading="eager">
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Featured Collection</h2>
+            <p class="gallery-subtitle">Browse our latest custom band merchandise shirts</p>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="classic-rock">Classic Rock</button>
+                <button class="filter-btn" data-filter="alternative">Alternative</button>
+                <button class="filter-btn" data-filter="punk">Punk/Metal</button>
+                <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+                <button id="viewAllBtn" class="btn btn-secondary">View All Products</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button id="loadMore" class="btn btn-primary">Load More</button>
+                <button id="showLessBtn" class="btn btn-secondary" style="display: none; margin-left: 10px;">Show Less</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Crazy Mama's Creations</h2>
+                    <p>Born from a love of music and sustainable fashion, Crazy Mama's Creations transforms vintage flannel shirts into wearable art. Each piece celebrates the timeless appeal of classic bands while giving new life to pre-loved clothing.</p>
+                    
+                    <p>Every shirt in our collection is hand-selected for quality and character, then carefully customized with high-quality band patches and artwork. From Grateful Dead to Pink Floyd, KISS to alternative icons, we honor the music that shaped generations.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Shirts Created</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Handmade</p>
+                        </div>
+                        <div class="stat">
+                            <h3></h3>
+                            <p>Music Love</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="Photos/056B0220-2503-4246-905D-FC52B4F7304E_1_105_c.jpeg" alt="Grateful Dead Sunshine Daydream custom shirt" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Behind the Scenes Section -->
+    <section id="behind-scenes" class="behind-scenes">
+        <div class="container">
+            <h2>Behind the Scenes</h2>
+            <p class="section-subtitle">See the magic of transformation from vintage flannel to rock & roll art</p>
+            
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-image">
+                        <img src="Photos/99376EBC-0BD8-47F4-807A-EABE24104F81_1_102_o.jpeg" alt="Vintage flannel selection process" loading="lazy">
+                    </div>
+                    <div class="process-info">
+                        <h3>🔍 Curating Vintage Flannels</h3>
+                        <p>Each flannel is hand-selected for quality, character, and the perfect canvas for rock art. We hunt through thrift stores and estate sales to find these hidden gems.</p>
+                    </div>
+                </div>
+                
+                <div class="process-card">
+                    <div class="process-image">
+                        <img src="Photos/logo.png" alt="Design and artwork creation" loading="lazy">
+                    </div>
+                    <div class="process-info">
+                        <h3>🎨 Creating Custom Designs</h3>
+                        <p>From selecting the perfect band artwork to positioning designs, every detail is carefully planned to honor the music and create wearable art.</p>
+                    </div>
+                </div>
+                
+                <div class="process-card">
+                    <div class="process-image">
+                        <img src="Photos/Krissy.jpeg" alt="Handcrafting process" loading="lazy">
+                    </div>
+                    <div class="process-info">
+                        <h3>✂️ Handcrafted with Love</h3>
+                        <p>Each shirt is individually crafted using quality materials and techniques that ensure your piece will rock for years to come.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stats-row">
+                <div class="stat-card">
+                    <h3>500+</h3>
+                    <p>Shirts Created</p>
+                    <span>Each one unique</span>
+                </div>
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>Handmade</p>
+                    <span>No mass production</span>
+                </div>
+                <div class="stat-card">
+                    <h3>♪</h3>
+                    <p>Music Love</p>
+                    <span>Pure passion</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ready to Rock?</h3>
+                    <p>Whether you're looking for a specific band or want a custom creation, we'd love to hear from you!</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <strong>Place Your Order:</strong>
+                            <p>Use the contact form below to send us your custom request</p>
+                        </div>
+                        <div class="contact-method">
+                            <strong>Custom Requests:</strong>
+                            <p>Send us your favorite band and shirt size preferences</p>
+                        </div>
+                        <div class="contact-method">
+                            <strong>Response Time:</strong>
+                            <p>24-48 hours for all inquiries</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="band">Favorite Band/Artist</label>
+                        <input type="text" id="band" name="band" placeholder="e.g., Pink Floyd, Grateful Dead, KISS">
+                    </div>
+                    <div class="form-group">
+                        <label for="size">Preferred Size</label>
+                        <select id="size" name="size">
+                            <option value="">Select Size</option>
+                            <option value="XS">Extra Small</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                            <option value="XL">Extra Large</option>
+                            <option value="XXL">2X Large</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your custom shirt idea or ask any questions!"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Crazy Mama's Creations</h3>
+                    <p>Handmade upcycled band merchandise</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Contact us through the form above</p>
+                    <p>Custom orders welcome</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Crazy Mama's Creations. All rights reserved. | Handmade with e for music lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+
+        // Product Gallery - Complete Collection
+        const products = [
+            // Featured Collection - Most Popular
+            { img: 'Photos/chris.jpeg', title: 'Chris Stapleton', description: 'Chris Stapleton design on premium custom flannel', category: 'classic-rock', featured: true },
+            { img: 'Photos/jimi.jpeg', title: 'Jimi Hendrix', description: 'Vintage flannel with iconic Jimi Hendrix artwork', category: 'classic-rock', featured: true },
+            { img: 'Photos/dead.jpeg', title: 'Grateful Dead', description: 'Classic Grateful Dead design on premium flannel', category: 'classic-rock', featured: true },
+            { img: 'Photos/bob.jpeg', title: 'Bob Marley', description: 'Vintage Bob Marley design on classic flannel', category: 'classic-rock', featured: true },
+            { img: 'Photos/mini_srtones.jpeg', title: 'Rolling Stones Toddler', description: 'Rolling Stones toddler size design on premium flannel', category: 'classic-rock', featured: true },
+            { img: 'Photos/MichaelFranti.jpeg', title: 'Michael Franti', description: 'Michael Franti & Spearhead design on premium flannel', category: 'alternative', featured: true },
+            { img: 'Photos/8914D332-9D10-4BA5-8D18-DD4B1BF1C985_1_105_c.jpeg', title: 'Led Zeppelin II', description: 'Bleached plaid flannel with iconic Led Zeppelin II album cover', category: 'classic-rock', featured: true },
+            
+            // Lifestyle Gallery - Photos with people/multiple shirts
+            { img: 'Photos/059679B7-22F6-4F8E-BE86-64D7DB02B537_1_105_c.jpeg', title: 'Band Collection Display', description: 'Showcase of multiple custom band flannels including KISS, Steve Miller, John Lennon, and Jimi Hendrix', category: 'lifestyle' },
+            { img: 'Photos/96F94E7E-4267-47FD-B9C7-4820CFB5AB9F_1_105_c.jpeg', title: 'Concert Scene - Fan Favorite', description: 'Custom flannel worn at live concert, festival ready design', category: 'lifestyle' },
+            { img: 'Photos/144D107B-012B-4652-B4C4-BE176A47375E_1_105_c.jpeg', title: 'Kurt Cobain - Vintage Portrait', description: 'Dark plaid flannel with iconic Kurt Cobain black and white photo', category: 'lifestyle' },
+            { img: 'Photos/55081C4B-51BD-47A3-85DC-B3101E30334D_1_105_c.jpeg', title: 'David Bowie - Performance Photo', description: 'Red plaid flannel with classic Bowie stage performance image', category: 'lifestyle' },
+            
+            // Classic Rock Collection
+            { img: 'Photos/10D2122C-E44E-4F3A-868A-9F1B8639C920_1_105_c.jpeg', title: 'The Eagles - Their Greatest Hits', description: 'Checkered flannel with classic Eagles album design', category: 'classic-rock' },
+            { img: 'Photos/4C586A03-E11D-40B7-8462-8B19FFBA9567_1_102_o.jpeg', title: 'Steve Miller Band - Flying Eagle', description: 'Green plaid flannel with vintage Steve Miller Band eagle design', category: 'classic-rock' },
+            { img: 'Photos/0EFCF944-742E-4DE0-BC78-06F46E5F3A65_1_105_c.jpeg', title: 'Classic Rock Vintage Design', description: 'Unique plaid flannel with retro band artwork', category: 'classic-rock' },
+            { img: 'Photos/1D2A2C55-16E6-4181-B0C8-C1A12F9D8E2B_1_105_c.jpeg', title: 'Vintage Band Tee Style', description: 'Soft flannel with classic band merchandise styling', category: 'classic-rock' },
+            { img: 'Photos/3283EB2B-1605-4202-A67F-F56603047084_1_105_c.jpeg', title: 'Retro Rock Design', description: 'Vintage-inspired rock band artwork on classic flannel', category: 'classic-rock' },
+            { img: 'Photos/361EA8EC-9F8B-476A-8172-D776143DE84C_1_102_o.jpeg', title: 'Classic Band Merchandise', description: 'Timeless band design on high-quality flannel shirt', category: 'classic-rock' },
+            { img: 'Photos/38612D9E-A915-4597-8828-7D9E0107A375_1_102_o.jpeg', title: 'Rock Legend Tribute', description: 'Tribute design to rock legends on vintage flannel', category: 'classic-rock' },
+            { img: 'Photos/48CF8237-DAA3-4458-9E90-BF2977984540_1_105_c.jpeg', title: 'Vintage Rock Collection', description: 'Part of our vintage rock collection, unique band artwork', category: 'classic-rock' },
+            { img: 'Photos/4D530D6C-F085-433B-BEF0-4B9A349E2738_1_105_c.jpeg', title: 'Classic Rock Essential', description: 'Essential classic rock design on premium flannel', category: 'classic-rock' },
+            { img: 'Photos/542E75CE-9323-49A7-902A-1D08720A3A01_1_105_c.jpeg', title: 'Rock Band Vintage', description: 'Vintage rock band artwork on classic flannel shirt', category: 'classic-rock' },
+            { img: 'Photos/55995E9E-3BB5-470E-A2B3-8CBEA138ACFB_1_105_c.jpeg', title: 'Music Legend Design', description: 'Music legend tribute on high-quality flannel', category: 'classic-rock' },
+            { img: 'Photos/59BDB081-6BE9-4B8E-ACE0-8ED28BBB963E_1_102_o.jpeg', title: 'Classic Band Heritage', description: 'Classic band heritage design on quality flannel', category: 'classic-rock' },
+            { img: 'Photos/5A23722F-0FE5-4469-A8C4-3388DEB661B1_1_102_o.jpeg', title: 'Vintage Music Style', description: 'Vintage music styling on comfortable flannel shirt', category: 'classic-rock' },
+            { img: 'Photos/5DFCD0D5-6128-497C-BF12-1176766D6F80_1_102_o.jpeg', title: 'Rock Collection Piece', description: 'Unique piece from our rock collection on flannel', category: 'classic-rock' },
+            { img: 'Photos/708460C3-DC90-4151-8070-8B57C2A4A86C_1_105_c.jpeg', title: 'Rock Legend Tribute', description: 'Rock legend tribute design on vintage flannel', category: 'classic-rock' },
+            { img: 'Photos/71EC1F58-AF4E-4072-8EFB-732A3A9FBAD4_1_102_o.jpeg', title: 'Classic Rock Icon', description: 'Classic rock icon design on quality flannel shirt', category: 'classic-rock' },
+            { img: 'Photos/72D3F9F7-4D8D-4D0B-8671-749DCAFB24FB_1_105_c.jpeg', title: 'Vintage Band Design', description: 'Vintage band design on comfortable flannel', category: 'classic-rock' },
+            { img: 'Photos/77720F59-C386-41B3-81D6-22EA40CFDC83_1_105_c.jpeg', title: 'Music Heritage Style', description: 'Music heritage styling on premium flannel shirt', category: 'classic-rock' },
+            { img: 'Photos/836011D6-4B56-4548-A706-FB158C627BEA_1_102_o.jpeg', title: 'Rock Band Classic', description: 'Classic rock band design on quality flannel', category: 'classic-rock' },
+            { img: 'Photos/840B73A9-2DA0-49C0-B2A4-A01C913F0DFF_1_105_c.jpeg', title: 'Vintage Music Collection', description: 'Part of vintage music collection on flannel', category: 'classic-rock' },
+            { img: 'Photos/85C61D8E-E14A-41BC-AAE1-D8EA0B3DB82F_1_105_c.jpeg', title: 'Music Legend Art', description: 'Music legend artwork on comfortable flannel', category: 'classic-rock' },
+            { img: 'Photos/88588E2D-ED15-49C2-8643-CDC6CB6B38D8_1_105_c.jpeg', title: 'Rock Heritage Design', description: 'Rock heritage design on vintage flannel shirt', category: 'classic-rock' },
+            { img: 'Photos/8AD2A4EE-2F68-472F-8F8A-5BED83ED6C9D_1_102_o.jpeg', title: 'Classic Band Art', description: 'Classic band artwork on premium flannel shirt', category: 'classic-rock' },
+            { img: 'Photos/934487B4-A625-488E-A5A9-7394F126D9DA_1_102_o.jpeg', title: 'Vintage Rock Style', description: 'Vintage rock styling on comfortable flannel', category: 'classic-rock' },
+            { img: 'Photos/9D68EBBC-A5B7-457D-A61C-21BB0D2E1506_1_105_c.jpeg', title: 'Rock Collection Style', description: 'Unique rock collection design on flannel', category: 'classic-rock' },
+            { img: 'Photos/AA755750-F361-460F-AA84-E57B819BB51F_1_102_o.jpeg', title: 'Music Heritage Collection', description: 'Music heritage collection on premium flannel', category: 'classic-rock' },
+            { img: 'Photos/AB50F47D-FB19-4505-953D-2FC3DFEDDC22_1_105_c.jpeg', title: 'Vintage Band Heritage', description: 'Vintage band heritage design on flannel', category: 'classic-rock' },
+            { img: 'Photos/AEA0ABCB-2904-4C27-B4AB-ED16B0DAFB38_1_102_o.jpeg', title: 'Rock Legend Collection', description: 'Rock legend collection piece on flannel', category: 'classic-rock' },
+            { img: 'Photos/AFE09D80-E30F-4058-B271-DCDFDD6F64DB_1_102_o.jpeg', title: 'Classic Music Style', description: 'Classic music styling on vintage flannel', category: 'classic-rock' },
+            { img: 'Photos/B7D5199C-7666-4D0A-8FC6-5375A38EEE76_1_102_o.jpeg', title: 'Rock Heritage Style', description: 'Rock heritage styling on comfortable flannel', category: 'classic-rock' },
+            { img: 'Photos/BACFF9D4-0FA6-4512-AFB5-856D157806FC_1_102_o.jpeg', title: 'Vintage Music Art', description: 'Vintage music artwork on quality flannel', category: 'classic-rock' },
+            { img: 'Photos/C02FBA78-0727-4860-BE44-B33698F836D6_1_102_o.jpeg', title: 'Classic Rock Heritage', description: 'Classic rock heritage on premium flannel', category: 'classic-rock' },
+            { img: 'Photos/C30DEDF6-787C-46C7-B3B7-70905D94DA84_1_102_o.jpeg', title: 'Music Legend Style', description: 'Music legend styling on vintage flannel', category: 'classic-rock' },
+            { img: 'Photos/CAEFED04-EE3B-4F80-812C-01CCA2621E13_1_105_c.jpeg', title: 'Rock Band Heritage', description: 'Rock band heritage design on flannel', category: 'classic-rock' },
+            { img: 'Photos/D5FD1E09-F112-4188-BBD0-822D5850CEEF_1_102_o.jpeg', title: 'Vintage Rock Collection', description: 'Vintage rock collection piece on flannel', category: 'classic-rock' },
+            { img: 'Photos/D88470E0-B7ED-462B-9743-6075027F0B6E_1_105_c.jpeg', title: 'Music Heritage Art', description: 'Music heritage artwork on quality flannel', category: 'classic-rock' },
+            { img: 'Photos/DE6F3871-DE96-4CA9-B8B0-D4010BAF15E7_1_105_c.jpeg', title: 'Classic Music Heritage', description: 'Classic music heritage on flannel shirt', category: 'classic-rock' },
+            { img: 'Photos/E12DA323-2A74-4B29-98EE-470165EFF8AD_1_105_c.jpeg', title: 'Rock Legend Art', description: 'Rock legend artwork on premium flannel', category: 'classic-rock' },
+            { img: 'Photos/F1CCA056-0C9F-4911-B03E-5E39B3A9A624_1_105_c.jpeg', title: 'Vintage Band Collection', description: 'Vintage band collection on flannel', category: 'classic-rock' },
+            { img: 'Photos/F4C8A58C-0EB8-46DE-842A-F7A5282D05E3_1_105_c.jpeg', title: 'Rock Heritage Collection', description: 'Rock heritage collection piece on flannel', category: 'classic-rock' },
+            { img: 'Photos/FBB9D8E6-C509-4791-AD82-A356992CFB17_1_105_c.jpeg', title: 'Music Collection Special', description: 'Special collection piece featuring unique music art', category: 'classic-rock' },
+            
+            // Alternative/Grunge Collection  
+            { img: 'Photos/26291752-037B-4B51-A567-370B6C609158_1_105_c.jpeg', title: 'Alternative Music Design', description: 'Unique alternative band artwork on quality flannel', category: 'alternative' },
+            { img: 'Photos/33120F52-1EDD-457E-8227-401EE66B7C4B_1_105_c.jpeg', title: 'Vintage Alternative Style', description: 'Alternative music design on premium vintage flannel', category: 'alternative' },
+            { img: 'Photos/3FF80CF4-A852-4399-91FC-28AF096A3294_1_105_c.jpeg', title: 'Music Festival Style', description: 'Festival-ready band design on comfortable flannel', category: 'alternative' },
+            { img: 'Photos/4C78C12B-BD9C-47DA-A992-F4437B33AA19_1_105_c.jpeg', title: 'Alternative Music Tribute', description: 'Alternative band tribute on quality vintage flannel', category: 'alternative' },
+            { img: 'Photos/57042873-DC64-4B72-8F2D-672012E996C0_1_102_o.jpeg', title: 'Alternative Rock Style', description: 'Alternative rock design on premium vintage flannel', category: 'alternative' },
+            { img: 'Photos/5F97229D-2EFA-4437-A3C5-6FF10100DDBD_1_102_o.jpeg', title: 'Music Festival Ready', description: 'Festival-ready band design on durable flannel', category: 'alternative' },
+            { img: 'Photos/653510F5-CE49-4857-B8E8-0B9F30CB16E3_1_105_c.jpeg', title: 'Alternative Music Art', description: 'Alternative music artwork on premium flannel', category: 'alternative' },
+            { img: 'Photos/7FB20D33-407C-43F4-AC60-03257F04DBA2_1_105_c.jpeg', title: 'Alternative Rock Art', description: 'Alternative rock artwork on vintage flannel', category: 'alternative' },
+            { img: 'Photos/846D4500-60E4-4D39-8216-FFB6F0AE6BBC_1_105_c.jpeg', title: 'Alternative Band Style', description: 'Alternative band styling on premium flannel', category: 'alternative' },
+            { img: 'Photos/89BD05C7-772D-4423-A15D-B80036782D84_1_105_c.jpeg', title: 'Alternative Music Style', description: 'Alternative music styling on quality flannel', category: 'alternative' },
+            { img: 'Photos/96E75FF2-F1B3-46BE-AEB3-D0CA48258A1F_1_105_c.jpeg', title: 'Music Festival Art', description: 'Festival-inspired music art on flannel', category: 'alternative' },
+            { img: 'Photos/A287B870-A4E9-49E9-BE0D-3EFA7463B0CF_1_102_o.jpeg', title: 'Alternative Rock Collection', description: 'Alternative rock collection piece on flannel', category: 'alternative' },
+            { img: 'Photos/AB76CC7B-41A7-46B1-A25D-F8402CAF6ECD_1_105_c.jpeg', title: 'Alternative Music Heritage', description: 'Alternative music heritage on quality flannel', category: 'alternative' },
+            { img: 'Photos/B613C6D7-4F5E-4931-A603-1580DF28AECC_1_102_o.jpeg', title: 'Alternative Band Collection', description: 'Alternative band collection on premium flannel', category: 'alternative' },
+            { img: 'Photos/B6D0E959-0CAD-45EA-BFDB-CBEA283FDF2D_1_105_c.jpeg', title: 'Music Festival Collection', description: 'Festival collection design on flannel shirt', category: 'alternative' },
+            { img: 'Photos/BCD1D063-8A12-471D-8752-3B8927F54F70_1_105_c.jpeg', title: 'Alternative Rock Heritage', description: 'Alternative rock heritage on flannel', category: 'alternative' },
+            { img: 'Photos/C8EC0DC8-0B02-44B7-AA5A-91DACD172A9C_1_105_c.jpeg', title: 'Alternative Music Collection', description: 'Alternative music collection on flannel', category: 'alternative' },
+            { img: 'Photos/D8A8C677-783E-4AA9-81B5-0893ECA3B4F6_1_105_c.jpeg', title: 'Alternative Band Art', description: 'Alternative band artwork on flannel', category: 'alternative' },
+            { img: 'Photos/E4FD2357-2E63-450D-8C22-61C9AA9DC0B8_1_102_o.jpeg', title: 'Alternative Music Art', description: 'Alternative music artwork on flannel', category: 'alternative' },
+            { img: 'Photos/E94557B7-9196-4061-9DE3-E160AF4A4234_1_105_c.jpeg', title: 'Music Festival Style', description: 'Festival styling on comfortable flannel', category: 'alternative' },
+            { img: 'Photos/F5337D68-9426-41BC-AB36-687DBEDA1335_1_102_o.jpeg', title: 'Alternative Rock Style', description: 'Alternative rock styling on quality flannel', category: 'alternative' },
+            
+            // Punk/Metal Collection
+            { img: 'Photos/297A2DA1-BB95-4F9D-B5EA-27D32D9D7184_1_105_c.jpeg', title: 'Punk Rock Style', description: 'Edgy punk band design on distressed flannel', category: 'punk' },
+            { img: 'Photos/2C5988F7-E5D4-461B-BC7B-71EEDE439109_1_105_c.jpeg', title: 'Metal Band Classic', description: 'Heavy metal band artwork on rugged flannel shirt', category: 'punk' },
+            { img: 'Photos/4DB8A0F7-8220-4534-9904-4EFF7336A119_1_105_c.jpeg', title: 'Punk Rock Heritage', description: 'Punk rock heritage design on distressed flannel', category: 'punk' },
+            { img: 'Photos/8318945C-66DC-4028-BAFD-75A70DEDC894_1_105_c.jpeg', title: 'Punk Music Design', description: 'Punk music design on distressed flannel shirt', category: 'punk' },
+            { img: 'Photos/A3517BAB-09A9-439E-8E94-6D7F61819699_1_105_c.jpeg', title: 'Punk Rock Art', description: 'Punk rock artwork on distressed flannel', category: 'punk' },
+            { img: 'Photos/BCF3CC02-CBF5-46A5-99F9-83E3AE8A251C_1_105_c.jpeg', title: 'Punk Music Heritage', description: 'Punk music heritage design on flannel', category: 'punk' },
+            { img: 'Photos/DABBDEC0-3093-465E-B401-EBD00AAD05CB_1_105_c.jpeg', title: 'Punk Rock Collection', description: 'Punk rock collection design on flannel', category: 'punk' },
+            
+        ];
+
+        let displayedProducts = 6;
+        let currentFilter = 'all';
+        let showingAll = false;
+
+        function renderProducts() {
+            const productGrid = document.querySelector('.product-grid');
+            const filteredProducts = currentFilter === 'all' 
+                ? products 
+                : products.filter(product => product.category === currentFilter);
+            
+            const productsToShow = showingAll ? filteredProducts : filteredProducts.slice(0, displayedProducts);
+            
+            productGrid.innerHTML = productsToShow.map((product, index) => `
+                <div class="product-card" data-category="${product.category}" data-product-id="${index}">
+                    <div class="product-image">
+                        <img src="${product.img}" alt="${product.title}" loading="lazy">
+                        <button class="wishlist-heart" onclick="toggleWishlist(${index})">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="view-btn" onclick="openModal(${index})">View Details</button>
+                            <div class="product-actions">
+                                <button class="quick-order-btn" onclick="quickOrder('${product.title}')">Quick Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.title}</h3>
+                        <p>${product.description}</p>
+                        <span class="price">Contact for pricing</span>
+                    </div>
+                </div>
+            `).join('');
+
+            // Show/hide load more and show less buttons
+            const loadMoreBtn = document.getElementById('loadMore');
+            const showLessBtn = document.getElementById('showLessBtn');
+            const viewAllBtn = document.getElementById('viewAllBtn');
+            
+            if (showingAll) {
+                loadMoreBtn.style.display = 'none';
+                showLessBtn.style.display = 'inline-block';
+                viewAllBtn.style.display = 'none';
+            } else {
+                showLessBtn.style.display = 'none';
+                viewAllBtn.style.display = 'inline-block';
+                if (displayedProducts >= filteredProducts.length) {
+                    loadMoreBtn.style.display = 'none';
+                } else {
+                    loadMoreBtn.style.display = 'block';
+                }
+            }
+        }
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                displayedProducts = 6;
+                showingAll = false;
+                renderProducts();
+            });
+        });
+
+        // Load more functionality
+        document.getElementById('loadMore').addEventListener('click', () => {
+            displayedProducts += 6;
+            renderProducts();
+        });
+
+        // View All functionality
+        document.getElementById('viewAllBtn').addEventListener('click', () => {
+            showingAll = true;
+            renderProducts();
+            // Scroll to top of gallery
+            document.querySelector('.gallery').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Show Less functionality
+        document.getElementById('showLessBtn').addEventListener('click', () => {
+            showingAll = false;
+            displayedProducts = 6;
+            renderProducts();
+            // Scroll to top of gallery
+            document.querySelector('.gallery').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Contact form
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const band = formData.get('band');
+            const size = formData.get('size');
+            const message = formData.get('message');
+            
+            const subject = `Custom Order Request from ${name}`;
+            const body = `Name: ${name}%0D%0A` +
+                        `Email: ${email}%0D%0A` +
+                        `Favorite Band/Artist: ${band}%0D%0A` +
+                        `Preferred Size: ${size}%0D%0A` +
+                        `Message: ${message}`;
+            
+            window.location.href = `mailto:crazymamascreations.love@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+            
+            alert('Thank you! Your email client will open to send your custom order request.');
+            e.target.reset();
+        });
+
+        // Wishlist functionality
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+        function toggleWishlist(productIndex) {
+            const product = products[productIndex];
+            const heartBtn = document.querySelector(`[data-product-id="${productIndex}"] .wishlist-heart`);
+            
+            if (wishlist.includes(productIndex)) {
+                // Remove from wishlist
+                wishlist = wishlist.filter(id => id !== productIndex);
+                heartBtn.classList.remove('active');
+            } else {
+                // Add to wishlist
+                wishlist.push(productIndex);
+                heartBtn.classList.add('active');
+                
+                // Show notification
+                showNotification(`${product.title} added to wishlist! ♥`);
+            }
+            
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            updateWishlistHearts();
+        }
+
+        function updateWishlistHearts() {
+            document.querySelectorAll('.wishlist-heart').forEach((heart, index) => {
+                if (wishlist.includes(index)) {
+                    heart.classList.add('active');
+                }
+            });
+        }
+
+        function quickOrder(productTitle) {
+            const subject = `Quick Order Request - ${productTitle}`;
+            const body = `Hi! I'm interested in ordering the ${productTitle} shirt. Please let me know about availability and pricing.`;
+            
+            window.location.href = `mailto:crazymamascreations.love@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            showNotification(`Opening email for ${productTitle} order!`);
+        }
+
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: var(--music-gold);
+                color: var(--soft-black);
+                padding: 15px 20px;
+                border-radius: 25px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+                z-index: 1000;
+                font-weight: bold;
+                transform: translateX(400px);
+                transition: transform 0.3s ease;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => notification.style.transform = 'translateX(0)', 100);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.transform = 'translateX(400px)';
+                setTimeout(() => document.body.removeChild(notification), 300);
+            }, 3000);
+        }
+
+        // Modal functionality
+        function openModal(productIndex) {
+            const product = products[productIndex];
+            const modal = document.getElementById('photoModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalQuickOrder = document.getElementById('modalQuickOrder');
+            const modalWishlist = document.getElementById('modalWishlist');
+            
+            // Set modal content
+            modalImage.src = product.img;
+            modalImage.alt = product.title;
+            modalTitle.textContent = product.title;
+            modalDescription.textContent = product.description;
+            
+            // Set up button handlers
+            modalQuickOrder.onclick = () => {
+                quickOrder(product.title);
+                closeModal();
+            };
+            
+            modalWishlist.onclick = () => {
+                toggleWishlist(productIndex);
+                updateModalWishlistButton(productIndex);
+            };
+            
+            // Update wishlist button state
+            updateModalWishlistButton(productIndex);
+            
+            // Show modal
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('photoModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        function updateModalWishlistButton(productIndex) {
+            const modalWishlist = document.getElementById('modalWishlist');
+            if (wishlist.includes(productIndex)) {
+                modalWishlist.textContent = '❤️ Remove from Wishlist';
+                modalWishlist.style.background = 'var(--love-pink)';
+                modalWishlist.style.color = 'white';
+            } else {
+                modalWishlist.textContent = '♥ Add to Wishlist';
+                modalWishlist.style.background = '';
+                modalWishlist.style.color = '';
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('photoModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Initialize gallery
+        renderProducts();
+        updateWishlistHearts();
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            const scrolled = window.pageYOffset;
+            
+            // Header scroll effect
+            if (scrolled > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Orbiting Elements - Teddy, Music Note, and Heart
+        const orbitingTeddy = document.getElementById('orbitingTeddy');
+        const orbitingNote = document.getElementById('orbitingNote');
+        const orbitingHeart = document.getElementById('orbitingHeart');
+        
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let teddyAngle = 0;
+        let noteAngle = Math.PI; // Start opposite to teddy
+        let heartAngle = Math.PI / 2; // Start perpendicular
+        
+        const orbitRadius = 80; // Distance from mouse
+        const orbitSpeed = 0.02; // Rotation speed
+        const moveSpeed = 0.08; // How fast they move toward mouse position
+
+        function updateOrbiters() {
+            // Update angles for circular motion
+            teddyAngle += orbitSpeed;
+            noteAngle += orbitSpeed * 1.3; // Slightly different speed
+            heartAngle += orbitSpeed * 0.8; // Even slower speed
+            
+            // Calculate target positions
+            const teddyTargetX = mouseX + Math.cos(teddyAngle) * orbitRadius;
+            const teddyTargetY = mouseY + Math.sin(teddyAngle) * orbitRadius;
+            
+            const noteTargetX = mouseX + Math.cos(noteAngle) * (orbitRadius * 1.2);
+            const noteTargetY = mouseY + Math.sin(noteAngle) * (orbitRadius * 1.2);
+            
+            const heartTargetX = mouseX + Math.cos(heartAngle) * (orbitRadius * 0.7);
+            const heartTargetY = mouseY + Math.sin(heartAngle) * (orbitRadius * 0.7);
+            
+            // Get current positions
+            const teddyCurrentX = parseFloat(orbitingTeddy.style.left) || teddyTargetX;
+            const teddyCurrentY = parseFloat(orbitingTeddy.style.top) || teddyTargetY;
+            
+            const noteCurrentX = parseFloat(orbitingNote.style.left) || noteTargetX;
+            const noteCurrentY = parseFloat(orbitingNote.style.top) || noteTargetY;
+            
+            const heartCurrentX = parseFloat(orbitingHeart.style.left) || heartTargetX;
+            const heartCurrentY = parseFloat(orbitingHeart.style.top) || heartTargetY;
+            
+            // Smoothly move toward target positions
+            const newTeddyX = teddyCurrentX + (teddyTargetX - teddyCurrentX) * moveSpeed;
+            const newTeddyY = teddyCurrentY + (teddyTargetY - teddyCurrentY) * moveSpeed;
+            
+            const newNoteX = noteCurrentX + (noteTargetX - noteCurrentX) * moveSpeed;
+            const newNoteY = noteCurrentY + (noteTargetY - noteCurrentY) * moveSpeed;
+            
+            const newHeartX = heartCurrentX + (heartTargetX - heartCurrentX) * moveSpeed;
+            const newHeartY = heartCurrentY + (heartTargetY - heartCurrentY) * moveSpeed;
+            
+            // Apply positions
+            orbitingTeddy.style.left = newTeddyX + 'px';
+            orbitingTeddy.style.top = newTeddyY + 'px';
+            
+            orbitingNote.style.left = newNoteX + 'px';
+            orbitingNote.style.top = newNoteY + 'px';
+            
+            orbitingHeart.style.left = newHeartX + 'px';
+            orbitingHeart.style.top = newHeartY + 'px';
+            
+            requestAnimationFrame(updateOrbiters);
+        }
+
+        // Track mouse movement and show elements
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // Show elements when mouse moves
+            orbitingTeddy.style.opacity = '0.6';
+            orbitingNote.style.opacity = '0.7';
+            orbitingHeart.style.opacity = '0.65';
+        });
+
+        // Hide elements when mouse leaves the page
+        document.addEventListener('mouseleave', () => {
+            orbitingTeddy.style.opacity = '0';
+            orbitingNote.style.opacity = '0';
+            orbitingHeart.style.opacity = '0';
+        });
+
+        // Show elements when mouse enters the page
+        document.addEventListener('mouseenter', () => {
+            orbitingTeddy.style.opacity = '0.6';
+            orbitingNote.style.opacity = '0.7';
+            orbitingHeart.style.opacity = '0.65';
+        });
+
+        // Initialize positions immediately
+        orbitingTeddy.style.left = (mouseX + orbitRadius) + 'px';
+        orbitingTeddy.style.top = mouseY + 'px';
+        orbitingNote.style.left = (mouseX - orbitRadius * 1.2) + 'px';
+        orbitingNote.style.top = mouseY + 'px';
+        orbitingHeart.style.left = mouseX + 'px';
+        orbitingHeart.style.top = (mouseY - orbitRadius * 0.7) + 'px';
+
+        // Start the animation
+        updateOrbiters();
+    </script>
+
+    <!-- Photo Modal -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <div class="modal-actions">
+                        <button id="modalQuickOrder" class="btn btn-primary">Quick Order</button>
+                        <button id="modalWishlist" class="btn btn-secondary">♥ Add to Wishlist</button>
+                    </div>
+                    <div class="modal-details">
+                        <h3>Details</h3>
+                        <ul>
+                            <li>✨ 100% Vintage flannel base</li>
+                            <li>🎨 Hand-applied band artwork</li>
+                            <li>♻️ Upcycled and sustainable</li>
+                            <li>🎸 One-of-a-kind piece</li>
+                            <li>📦 Contact for sizing and availability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
