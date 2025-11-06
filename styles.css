@@ -633,33 +633,54 @@ h4 {
 /* Enhanced Product Actions */
 .product-actions {
     display: flex;
+    flex-direction: column;
     gap: 10px;
     align-items: center;
+    width: 100%;
 }
 
-.quick-order-btn {
+.paypal-button-container {
+    width: 100%;
+    max-width: 200px;
+}
+
+.paypal-alternative {
     background: var(--music-gold);
     color: var(--soft-black);
-    padding: 8px 16px;
     border: none;
-    border-radius: 20px;
+    padding: 12px 16px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    transform: translateY(20px);
-    opacity: 0;
+    width: 100%;
+    font-size: 0.9rem;
 }
 
-.product-card:hover .quick-order-btn {
-    transform: translateY(0);
-    opacity: 1;
-    transition-delay: 0.1s;
+.paypal-alternative:hover {
+    background: var(--logo-red);
+    color: white;
+    transform: scale(1.05);
 }
 
-.quick-order-btn:hover {
-    background: var(--warm-white);
+.custom-order-btn {
+    background: transparent;
+    color: white;
+    padding: 8px 16px;
+    border: 2px solid white;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    width: 100%;
+    max-width: 200px;
+}
+
+.custom-order-btn:hover {
+    background: white;
     color: var(--logo-red);
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* Wishlist Heart */

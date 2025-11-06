@@ -6,6 +6,8 @@
     <title>Crazy Mama's Creations - Custom Band Merchandise & Upcycled Fashion</title>
     <meta name="description" content="Unique handmade band merchandise shirts on vintage flannel. Custom upcycled clothing featuring classic rock, punk, and alternative music designs.">
     <link rel="stylesheet" href="styles.css">
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ac62NRaB0gPAmZgmD4yImZhYWf8a6Gsd7F0sPVKMInpGCk6TvAUrTMG4J98Ch4PeWWYmcR9m0Zf5nMfb&currency=USD"></script>
 </head>
 <body>
 
@@ -191,6 +193,10 @@
                         <div class="contact-method">
                             <strong>Response Time:</strong>
                             <p>24-48 hours for all inquiries</p>
+                        </div>
+                        <div class="contact-method">
+                            <strong>Payment Options:</strong>
+                            <p>PayPal, Venmo (@crazymamascreations), or contact for alternatives</p>
                         </div>
                     </div>
                 </div>
@@ -406,14 +412,15 @@
                         <div class="product-overlay">
                             <button class="view-btn" onclick="openModal(${index})">View Details</button>
                             <div class="product-actions">
-                                <button class="quick-order-btn" onclick="quickOrder('${product.title}')">Quick Order</button>
+                                <div class="paypal-button-container" data-product-title="${product.title}"></div>
+                                <button class="custom-order-btn" onclick="customOrder('${product.title}')">Custom Size/Request</button>
                             </div>
                         </div>
                     </div>
                     <div class="product-info">
                         <h3>${product.title}</h3>
                         <p>${product.description}</p>
-                        <span class="price">Contact for pricing</span>
+                        <span class="price">$85</span>
                     </div>
                 </div>
             `).join('');
@@ -436,6 +443,16 @@
                     loadMoreBtn.style.display = 'block';
                 }
             }
+
+            // Create PayPal buttons for all visible products
+            setTimeout(() => {
+                document.querySelectorAll('.paypal-button-container').forEach(container => {
+                    const productTitle = container.getAttribute('data-product-title');
+                    if (container.innerHTML === '') {  // Only create if not already created
+                        createPayPalButton(container, productTitle);
+                    }
+                });
+            }, 100);
         }
 
         // Filter functionality
@@ -543,13 +560,74 @@
             });
         }
 
-        function quickOrder(productTitle) {
-            const subject = `Quick Order Request - ${productTitle}`;
-            const body = `Hi! I'm interested in ordering the ${productTitle} shirt. Please let me know about availability and pricing.`;
-            
-            window.location.href = `mailto:crazymamascreations.love@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            showNotification(`Opening email for ${productTitle} order!`);
+        function customOrder(productTitle) {
+            const subject = `Custom Size/Request - ${productTitle}`;
+            const body = `Hi! I'm interested in the ${productTitle} shirt but need:\n\n☐ Different size than available\n☐ Custom design modification\n☐ Special requests\n☐ Questions about the item\n\nPlease let me know what options are available!`;
+
+            // Use the working Formspree contact form
+            const contactSection = document.querySelector('#contact');
+            const bandField = document.querySelector('#band');
+            const messageField = document.querySelector('#message');
+
+            // Pre-fill form fields
+            if (bandField) bandField.value = productTitle;
+            if (messageField) messageField.value = `I'm interested in the ${productTitle} shirt but have special requests or questions.`;
+
+            // Scroll to contact form
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+
+            showNotification(`Scroll down to the contact form - we've pre-filled it for ${productTitle}!`);
+        }
+
+        // PayPal button creation
+        function createPayPalButton(container, productTitle) {
+            if (typeof paypal === 'undefined') {
+                // PayPal SDK not loaded, show alternative
+                container.innerHTML = '<button class="paypal-alternative" onclick="showPaymentOptions(\'' + productTitle + '\')">Buy Now - $85</button>';
+                return;
+            }
+
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: '85.00'
+                            },
+                            description: productTitle + ' - Vintage Band Flannel Shirt'
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        showNotification('Payment successful! We\'ll contact you within 24 hours to confirm size and shipping details.');
+
+                        // Send order notification email
+                        fetch('https://formspree.io/f/mldoqajy', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                _subject: 'NEW PAID ORDER - ' + productTitle,
+                                product: productTitle,
+                                paypal_order_id: data.orderID,
+                                customer_name: details.payer.name.given_name + ' ' + details.payer.name.surname,
+                                customer_email: details.payer.email_address,
+                                amount: '$85.00',
+                                message: 'PAID ORDER - Please contact customer for size and shipping details.'
+                            })
+                        });
+                    });
+                },
+                onError: function(err) {
+                    showNotification('Payment failed. Please try again or contact us directly.');
+                    console.error('PayPal error:', err);
+                }
+            }).render(container);
+        }
+
+        function showPaymentOptions(productTitle) {
+            const message = `Ready to buy ${productTitle} for $85?\n\nPayment Options:\n• PayPal: Available above\n• Venmo: @crazymamascreations\n• Contact us for other payment methods\n\nAfter payment, we'll contact you for size and shipping!`;
+            alert(message);
         }
 
         function showNotification(message) {
