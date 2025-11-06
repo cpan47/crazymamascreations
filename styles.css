@@ -13,8 +13,8 @@
     --light-beige: #E8DCC6;
     --medium-beige: #D4B896;
     --dark-beige: #B8A082;
-    --charcoal: #333333;
-    --soft-black: #1F1F1F;
+    --charcoal: #2B2B2B; /* Improved contrast from #333333 */
+    --soft-black: #1A1A1A; /* Improved contrast from #1F1F1F */
     
     /* Accent Colors */
     --music-gold: #D4AF37;
@@ -42,30 +42,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     color: var(--logo-black);
-    background: 
-        linear-gradient(rgba(251, 248, 243, 0.4), rgba(245, 242, 237, 0.4)),
-        radial-gradient(circle at 20% 80%, #FF4757 0%, rgba(255, 71, 87, 0.3) 70%, transparent 80%),
-        radial-gradient(circle at 80% 20%, #00D2D3 0%, rgba(0, 210, 211, 0.3) 70%, transparent 80%),
-        radial-gradient(circle at 40% 40%, #2F86EB 0%, rgba(47, 134, 235, 0.3) 70%, transparent 80%),
-        radial-gradient(circle at 60% 80%, #26de81 0%, rgba(38, 222, 129, 0.3) 70%, transparent 80%),
-        radial-gradient(circle at 80% 60%, #FFA502 0%, rgba(255, 165, 2, 0.3) 70%, transparent 80%),
-        radial-gradient(circle at 20% 20%, #A55EEA 0%, rgba(165, 94, 234, 0.3) 70%, transparent 80%),
-        radial-gradient(circle at 60% 20%, #FF3838 0%, rgba(255, 56, 56, 0.3) 70%, transparent 80%),
-        radial-gradient(circle at 40% 80%, #32CD32 0%, rgba(50, 205, 50, 0.3) 70%, transparent 80%),
-        linear-gradient(45deg, #FF6348 0%, #FF9FF3 50%, #54A0FF 100%);
-    background-size: 
-        100% 100%,
-        200% 200%,
-        300% 300%,
-        250% 250%,
-        280% 280%,
-        320% 320%,
-        240% 240%,
-        290% 290%,
-        260% 260%,
-        100% 100%;
-    background-attachment: fixed;
-    animation: tieDyeMorph 20s ease-in-out infinite;
+    background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 50%, var(--light-beige) 100%);
     overflow-x: hidden;
     min-height: 100vh;
     position: relative;
@@ -108,7 +85,6 @@ body::before {
         0 0,
         60px 60px,
         0 0;
-    animation: geometricPulse 14s ease-in-out infinite;
 }
 
 body::after {
@@ -150,38 +126,8 @@ body::after {
         30px 30px,
         0 0,
         100px 100px;
-    animation: geometricExpand 16s ease-in-out infinite reverse;
 }
 
-/* Floating Music Notes Animation */
-.floating-notes {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.1;
-}
-
-.music-note {
-    position: absolute;
-    font-size: 2rem;
-    color: var(--music-gold);
-    animation: float 8s infinite ease-in-out;
-}
-
-.music-note:nth-child(1) { left: 10%; animation-delay: 0s; }
-.music-note:nth-child(2) { left: 20%; animation-delay: 2s; }
-.music-note:nth-child(3) { left: 70%; animation-delay: 4s; }
-.music-note:nth-child(4) { left: 85%; animation-delay: 6s; }
-
-@keyframes float {
-    0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-    10%, 90% { opacity: 0.1; }
-    50% { transform: translateY(-10px) rotate(180deg); opacity: 0.15; }
-}
 
 /* Typewriter Effect */
 .typewriter {
@@ -200,182 +146,6 @@ body::after {
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: var(--logo-red); }
-}
-
-/* Geometric Pattern Animations */
-@keyframes geometricPulse {
-    0%, 100% {
-        background-size: 
-            40px 40px,
-            35px 35px,
-            55px 55px,
-            45px 45px,
-            120px 120px,
-            100px 100px,
-            180px 180px;
-        opacity: 0.7;
-        transform: rotate(0deg);
-    }
-    25% {
-        background-size: 
-            45px 45px,
-            40px 40px,
-            60px 60px,
-            50px 50px,
-            130px 130px,
-            110px 110px,
-            190px 190px;
-        opacity: 0.9;
-        transform: rotate(15deg);
-    }
-    50% {
-        background-size: 
-            50px 50px,
-            45px 45px,
-            65px 65px,
-            55px 55px,
-            140px 140px,
-            120px 120px,
-            200px 200px;
-        opacity: 1;
-        transform: rotate(30deg);
-    }
-    75% {
-        background-size: 
-            45px 45px,
-            40px 40px,
-            60px 60px,
-            50px 50px,
-            130px 130px,
-            110px 110px,
-            190px 190px;
-        opacity: 0.9;
-        transform: rotate(15deg);
-    }
-}
-
-@keyframes geometricExpand {
-    0%, 100% {
-        background-size: 
-            80px 80px,
-            80px 80px,
-            80px 80px,
-            80px 80px,
-            60px 60px,
-            60px 60px,
-            200px 200px,
-            180px 180px;
-        transform: rotate(0deg) scale(1);
-        opacity: 0.5;
-    }
-    25% {
-        background-size: 
-            85px 85px,
-            85px 85px,
-            85px 85px,
-            85px 85px,
-            65px 65px,
-            65px 65px,
-            220px 220px,
-            200px 200px;
-        transform: rotate(90deg) scale(1.1);
-        opacity: 0.8;
-    }
-    50% {
-        background-size: 
-            90px 90px,
-            90px 90px,
-            90px 90px,
-            90px 90px,
-            70px 70px,
-            70px 70px,
-            240px 240px,
-            220px 220px;
-        transform: rotate(180deg) scale(1.2);
-        opacity: 0.6;
-    }
-    75% {
-        background-size: 
-            85px 85px,
-            85px 85px,
-            85px 85px,
-            85px 85px,
-            65px 65px,
-            65px 65px,
-            220px 220px,
-            200px 200px;
-        transform: rotate(270deg) scale(1.1);
-        opacity: 0.8;
-    }
-}
-
-/* Tie-Dye Morphing Animation */
-@keyframes tieDyeMorph {
-    0% {
-        background-position: 
-            0% 0%,
-            0% 0%,
-            0% 0%,
-            0% 0%,
-            0% 0%,
-            0% 0%,
-            0% 0%,
-            0% 0%,
-            0% 0%,
-            0% 0%;
-    }
-    25% {
-        background-position: 
-            0% 0%,
-            100% 100%,
-            -50% 150%,
-            150% -50%,
-            75% 125%,
-            125% 75%,
-            -25% 175%,
-            175% -25%,
-            50% 50%,
-            0% 0%;
-    }
-    50% {
-        background-position: 
-            0% 0%,
-            200% 0%,
-            -100% 200%,
-            200% -100%,
-            150% 150%,
-            150% 150%,
-            -50% 250%,
-            250% -50%,
-            100% 100%,
-            0% 0%;
-    }
-    75% {
-        background-position: 
-            0% 0%,
-            300% -100%,
-            -150% 250%,
-            250% -150%,
-            225% 75%,
-            75% 225%,
-            -75% 325%,
-            325% -75%,
-            150% 50%,
-            0% 0%;
-    }
-    100% {
-        background-position: 
-            0% 0%,
-            400% 0%,
-            -200% 300%,
-            300% -200%,
-            300% 100%,
-            100% 300%,
-            -100% 400%,
-            400% -100%,
-            200% 0%,
-            0% 0%;
-    }
 }
 
 .container {
@@ -452,6 +222,7 @@ h4 {
     transform: translateY(-1px);
 }
 
+
 /* Header */
 .header {
     background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 100%);
@@ -492,50 +263,6 @@ h4 {
     box-shadow: 0 4px 15px rgba(212, 184, 150, 0.3);
 }
 
-/* Orbiting Elements */
-.orbiting-element {
-    position: fixed;
-    pointer-events: none;
-    z-index: 1000;
-    transition: all 0.1s ease;
-}
-
-.teddy-orbiter {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    animation: gentleSpin 6s linear infinite;
-    filter: drop-shadow(0 0 8px rgba(128, 0, 128, 0.5));
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-}
-
-.note-orbiter {
-    font-size: 2rem;
-    color: var(--music-gold);
-    animation: gentleSpin 4s linear infinite;
-    filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.7));
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
-
-.heart-orbiter {
-    font-size: 1.8rem;
-    color: var(--love-pink);
-    animation: gentleSpin 5s linear infinite;
-    filter: drop-shadow(0 0 6px rgba(232, 90, 138, 0.8));
-    opacity: 0.65;
-    transition: opacity 0.3s ease;
-}
-
-@keyframes gentleSpin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 .logo-text h1 {
     color: var(--logo-black);
@@ -717,32 +444,157 @@ h4 {
     box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
 }
 
+/* Mobile-First CSS Grid Layout */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
     margin-bottom: 3rem;
+    width: 100%;
+}
+
+/* Tablet and up: 2 columns */
+@media (min-width: 640px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Desktop and up: 3 columns */
+@media (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+/* Large desktop: 4 columns */
+@media (min-width: 1400px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+}
+
+/* Ultra-wide screens: 5 columns */
+@media (min-width: 1920px) {
+    .product-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+/* Grid container optimization */
+.gallery .container {
+    container-type: inline-size;
+}
+
+/* Container queries for even more responsive design */
+@container (min-width: 640px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@container (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+    .product-card {
+        will-change: transform;
+    }
+
+    .product-image img {
+        will-change: auto;
+    }
+}
+
+/* Loading States */
+.loading-skeleton {
+    background: linear-gradient(90deg, var(--light-beige) 25%, var(--medium-beige) 50%, var(--light-beige) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 15px;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.product-grid.loading .product-card {
+    opacity: 0.7;
+}
+
+.product-image.loading {
+    background: var(--light-beige);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image.loading::after {
+    content: "Loading...";
+    color: var(--charcoal);
+    font-size: 1rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--light-beige);
+    border-top: 4px solid var(--logo-red);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .product-card {
     background: var(--warm-white);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(212, 184, 150, 0.3);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(212, 184, 150, 0.25);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid var(--light-beige);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
 }
 
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(212, 184, 150, 0.4);
-    border-color: var(--logo-red);
+/* Enhanced hover effects for larger screens */
+@media (min-width: 768px) {
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(212, 184, 150, 0.4);
+        border-color: var(--logo-red);
+    }
 }
+
 
 .product-image {
     position: relative;
     overflow: hidden;
-    height: 300px;
+    flex: 1;
+    min-height: 250px;
 }
 
 .product-image img {
@@ -1066,7 +918,21 @@ h4 {
 }
 
 .product-info {
-    padding: 1.5rem;
+    padding: 1rem;
+    flex-shrink: 0;
+}
+
+/* Responsive product info padding */
+@media (min-width: 640px) {
+    .product-info {
+        padding: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-info {
+        padding: 1.5rem;
+    }
 }
 
 .product-info h3 {
@@ -1531,9 +1397,6 @@ h4 {
         justify-content: center;
     }
 
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
 
     .about-content {
         grid-template-columns: 1fr;
@@ -1598,14 +1461,8 @@ h4 {
         padding: 60px 1rem;
     }
 
-    .product-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
     .product-card {
-        margin: 0 auto;
-        max-width: 350px;
+        max-width: 100%;
     }
 
     .about-stats {

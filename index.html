@@ -8,24 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Floating Music Notes -->
-    <div class="floating-notes">
-        <div class="music-note">♪</div>
-        <div class="music-note">♫</div>
-        <div class="music-note">♪</div>
-        <div class="music-note">♫</div>
-    </div>
 
-    <!-- Mouse Orbiting Elements -->
-    <div id="orbitingTeddy" class="orbiting-element">
-        <img src="Photos/tedpurp.png" alt="Orbiting Teddy" class="teddy-orbiter">
-    </div>
-    <div id="orbitingNote" class="orbiting-element">
-        <span class="note-orbiter">♪</span>
-    </div>
-    <div id="orbitingHeart" class="orbiting-element">
-        <span class="heart-orbiter">❤️</span>
-    </div>
 
     <!-- Header -->
     <header class="header">
@@ -51,6 +34,7 @@
             </div>
         </nav>
     </header>
+
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -116,7 +100,7 @@
                             <p>Handmade</p>
                         </div>
                         <div class="stat">
-                            <h3></h3>
+                            <h3>∞</h3>
                             <p>Music Love</p>
                         </div>
                     </div>
@@ -270,7 +254,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Crazy Mama's Creations. All rights reserved. | Handmade with e for music lovers</p>
+                <p>&copy; 2024 Crazy Mama's Creations. All rights reserved. | Handmade with ❤️ for music lovers</p>
             </div>
         </div>
     </footer>
@@ -665,105 +649,7 @@
             }
         });
 
-        // Orbiting Elements - Teddy, Music Note, and Heart
-        const orbitingTeddy = document.getElementById('orbitingTeddy');
-        const orbitingNote = document.getElementById('orbitingNote');
-        const orbitingHeart = document.getElementById('orbitingHeart');
-        
-        let mouseX = window.innerWidth / 2;
-        let mouseY = window.innerHeight / 2;
-        let teddyAngle = 0;
-        let noteAngle = Math.PI; // Start opposite to teddy
-        let heartAngle = Math.PI / 2; // Start perpendicular
-        
-        const orbitRadius = 80; // Distance from mouse
-        const orbitSpeed = 0.02; // Rotation speed
-        const moveSpeed = 0.08; // How fast they move toward mouse position
 
-        function updateOrbiters() {
-            // Update angles for circular motion
-            teddyAngle += orbitSpeed;
-            noteAngle += orbitSpeed * 1.3; // Slightly different speed
-            heartAngle += orbitSpeed * 0.8; // Even slower speed
-            
-            // Calculate target positions
-            const teddyTargetX = mouseX + Math.cos(teddyAngle) * orbitRadius;
-            const teddyTargetY = mouseY + Math.sin(teddyAngle) * orbitRadius;
-            
-            const noteTargetX = mouseX + Math.cos(noteAngle) * (orbitRadius * 1.2);
-            const noteTargetY = mouseY + Math.sin(noteAngle) * (orbitRadius * 1.2);
-            
-            const heartTargetX = mouseX + Math.cos(heartAngle) * (orbitRadius * 0.7);
-            const heartTargetY = mouseY + Math.sin(heartAngle) * (orbitRadius * 0.7);
-            
-            // Get current positions
-            const teddyCurrentX = parseFloat(orbitingTeddy.style.left) || teddyTargetX;
-            const teddyCurrentY = parseFloat(orbitingTeddy.style.top) || teddyTargetY;
-            
-            const noteCurrentX = parseFloat(orbitingNote.style.left) || noteTargetX;
-            const noteCurrentY = parseFloat(orbitingNote.style.top) || noteTargetY;
-            
-            const heartCurrentX = parseFloat(orbitingHeart.style.left) || heartTargetX;
-            const heartCurrentY = parseFloat(orbitingHeart.style.top) || heartTargetY;
-            
-            // Smoothly move toward target positions
-            const newTeddyX = teddyCurrentX + (teddyTargetX - teddyCurrentX) * moveSpeed;
-            const newTeddyY = teddyCurrentY + (teddyTargetY - teddyCurrentY) * moveSpeed;
-            
-            const newNoteX = noteCurrentX + (noteTargetX - noteCurrentX) * moveSpeed;
-            const newNoteY = noteCurrentY + (noteTargetY - noteCurrentY) * moveSpeed;
-            
-            const newHeartX = heartCurrentX + (heartTargetX - heartCurrentX) * moveSpeed;
-            const newHeartY = heartCurrentY + (heartTargetY - heartCurrentY) * moveSpeed;
-            
-            // Apply positions
-            orbitingTeddy.style.left = newTeddyX + 'px';
-            orbitingTeddy.style.top = newTeddyY + 'px';
-            
-            orbitingNote.style.left = newNoteX + 'px';
-            orbitingNote.style.top = newNoteY + 'px';
-            
-            orbitingHeart.style.left = newHeartX + 'px';
-            orbitingHeart.style.top = newHeartY + 'px';
-            
-            requestAnimationFrame(updateOrbiters);
-        }
-
-        // Track mouse movement and show elements
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            // Show elements when mouse moves
-            orbitingTeddy.style.opacity = '0.6';
-            orbitingNote.style.opacity = '0.7';
-            orbitingHeart.style.opacity = '0.65';
-        });
-
-        // Hide elements when mouse leaves the page
-        document.addEventListener('mouseleave', () => {
-            orbitingTeddy.style.opacity = '0';
-            orbitingNote.style.opacity = '0';
-            orbitingHeart.style.opacity = '0';
-        });
-
-        // Show elements when mouse enters the page
-        document.addEventListener('mouseenter', () => {
-            orbitingTeddy.style.opacity = '0.6';
-            orbitingNote.style.opacity = '0.7';
-            orbitingHeart.style.opacity = '0.65';
-        });
-
-        // Initialize positions immediately
-        orbitingTeddy.style.left = (mouseX + orbitRadius) + 'px';
-        orbitingTeddy.style.top = mouseY + 'px';
-        orbitingNote.style.left = (mouseX - orbitRadius * 1.2) + 'px';
-        orbitingNote.style.top = mouseY + 'px';
-        orbitingHeart.style.left = mouseX + 'px';
-        orbitingHeart.style.top = (mouseY - orbitRadius * 0.7) + 'px';
-
-        // Start the animation
-        updateOrbiters();
     </script>
 
     <!-- Photo Modal -->
