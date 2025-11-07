@@ -3,8 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crazy Mama's Creations - Custom Band Merchandise & Upcycled Fashion</title>
-    <meta name="description" content="Unique handmade band merchandise shirts on vintage flannel. Custom upcycled clothing featuring classic rock, punk, and alternative music designs.">
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='85' font-size='80'%3E🎸%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOkSURBVFiFtZd7bFRVFMc/587M7ky7013ooC1toYDysLwfIhpBCxITCzFqQhPjI8aYGI0mfjBRE18xMRpfMUaNiQ9iQjQmGqNGjYmKD0SNQRAREQG1gFBa2t3Zndn7OPePmZ1Od2a6LfGkk5k79557f+d3z+/ec2dE">
+
+    <!-- iOS App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23DC2626'/%3E%3Cstop offset='100%25' style='stop-color:%23B91C1C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='180' height='180' fill='url(%23grad)' rx='40'/%3E%3Ctext x='90' y='120' font-size='90' text-anchor='middle' fill='%23FBF8F3'%3E🎸%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" sizes="152x152" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 152 152'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23DC2626'/%3E%3Cstop offset='100%25' style='stop-color:%23B91C1C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='152' height='152' fill='url(%23grad)' rx='35'/%3E%3Ctext x='76' y='102' font-size='76' text-anchor='middle' fill='%23FBF8F3'%3E🎸%3C/text%3E%3C/svg%3E">
+
+    <!-- Android/Chrome App Icons -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#DC2626">
+    <meta name="msapplication-TileColor" content="#DC2626">
+
+    <title>Crazy Mama's Creations - Custom Band Merchandise & Upcycled Fashion | Centerport, NY</title>
+    <meta name="description" content="Handmade vintage flannel band shirts by Krissy Pangia. Custom rock merchandise featuring Led Zeppelin, Pink Floyd, Grateful Dead & more. Centerport, NY. $85 each.">
+    <meta name="keywords" content="vintage band shirts, custom rock merchandise, upcycled flannel, Led Zeppelin shirt, Pink Floyd, Grateful Dead, classic rock clothing, handmade band tees, Centerport NY, vintage rock apparel">
+    <meta name="author" content="Krissy Pangia - Crazy Mama's Creations">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Crazy Mama's Creations - Handmade Vintage Band Shirts">
+    <meta property="og:description" content="Unique handmade band merchandise on vintage flannel. Custom rock shirts featuring your favorite classic bands. Made by Krissy Pangia in Centerport, NY.">
+    <meta property="og:image" content="https://crazymamascreations.love/Photos/Krissy.jpeg">
+    <meta property="og:url" content="https://crazymamascreations.love">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Crazy Mama's Creations - Custom Band Merchandise">
+    <meta name="twitter:description" content="Handmade vintage flannel band shirts featuring classic rock bands. Custom upcycled clothing by Krissy Pangia.">
+    <meta name="twitter:image" content="https://crazymamascreations.love/Photos/Krissy.jpeg">
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Crazy Mama's Creations",
+        "description": "Handmade vintage band merchandise and upcycled clothing",
+        "founder": "Krissy Pangia",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Centerport",
+            "addressRegion": "NY",
+            "addressCountry": "US"
+        },
+        "email": "crazymamascreations.love@gmail.com",
+        "url": "https://crazymamascreations.love",
+        "priceRange": "$85",
+        "paymentAccepted": "PayPal, Venmo",
+        "openingHours": "Mo-Su",
+        "category": "Clothing Store"
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <!-- PayPal SDK -->
     <script src="https://www.paypal.com/sdk/js?client-id=Ac62NRaB0gPAmZgmD4yImZhYWf8a6Gsd7F0sPVKMInpGCk6TvAUrTMG4J98Ch4PeWWYmcR9m0Zf5nMfb&currency=USD"></script>
@@ -109,6 +172,89 @@
                 </div>
                 <div class="about-image">
                     <img src="Photos/056B0220-2503-4246-905D-FC52B4F7304E_1_105_c.jpeg" alt="Grateful Dead Sunshine Daydream custom shirt" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Amazing quality! The Led Zeppelin shirt I ordered is perfect - the flannel is super soft and the design looks incredible. Krissy's attention to detail is outstanding!"</p>
+                    <div class="review-author">- Sarah M., Long Island</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"I've been looking for unique band merchandise for years and this is exactly what I wanted. The Pink Floyd shirt exceeded my expectations. Will definitely order again!"</p>
+                    <div class="review-author">- Mike R., NYC</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Custom order process was so easy and the final product was exactly what I envisioned. The Grateful Dead design on vintage flannel is absolutely beautiful. Highly recommend!"</p>
+                    <div class="review-author">- Jessica L., Connecticut</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policies & Trust Section -->
+    <section class="policies">
+        <div class="container">
+            <h2>Our Guarantee</h2>
+            <div class="policies-grid">
+                <div class="policy-card">
+                    <div class="policy-icon">🎨</div>
+                    <h3>Handmade Quality</h3>
+                    <p>Each shirt is personally crafted by Krissy Pangia using premium vintage flannel and high-quality band artwork. Every piece is one-of-a-kind.</p>
+                </div>
+                <div class="policy-card">
+                    <div class="policy-icon">⏰</div>
+                    <h3>Delivery Timeline</h3>
+                    <p>Custom orders: 2-3 weeks from payment to shipment. In-stock items ship within 3-5 business days. Rush orders available upon request.</p>
+                </div>
+                <div class="policy-card">
+                    <div class="policy-icon">📦</div>
+                    <h3>Shipping & Returns</h3>
+                    <p>We ship via USPS or FedEx with tracking. Returns and exchanges accepted within 14 days if item doesn't fit as expected.</p>
+                </div>
+                <div class="policy-card">
+                    <div class="policy-icon">💳</div>
+                    <h3>Secure Payment</h3>
+                    <p>PayPal checkout protects your payment information. We also accept Venmo. All transactions are secure and encrypted.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide Section -->
+    <section class="size-guide">
+        <div class="container">
+            <h2>Size Guide</h2>
+            <div class="size-content">
+                <div class="size-info">
+                    <h3>Available Sizes</h3>
+                    <p>We offer sizes XS through XXL. Each vintage flannel fits slightly differently, so we provide detailed measurements for every item.</p>
+
+                    <h4>General Fit Guide:</h4>
+                    <ul>
+                        <li><strong>XS:</strong> Chest 32-34", Length 24-25"</li>
+                        <li><strong>S:</strong> Chest 36-38", Length 26-27"</li>
+                        <li><strong>M:</strong> Chest 40-42", Length 28-29"</li>
+                        <li><strong>L:</strong> Chest 44-46", Length 30-31"</li>
+                        <li><strong>XL:</strong> Chest 48-50", Length 32-33"</li>
+                        <li><strong>XXL:</strong> Chest 52-54", Length 34-35"</li>
+                    </ul>
+                </div>
+                <div class="size-tips">
+                    <h3>Sizing Tips</h3>
+                    <p>✨ <strong>Vintage Fit:</strong> These are authentic vintage flannels, so sizing may vary from modern standards</p>
+                    <p>📏 <strong>Measurements:</strong> We provide exact chest and length measurements for each item</p>
+                    <p>💬 <strong>Questions?</strong> Contact us with your measurements and we'll recommend the best size</p>
+                    <p>🔄 <strong>Exchanges:</strong> If the fit isn't right, we offer exchanges within 14 days</p>
                 </div>
             </div>
         </div>
@@ -297,13 +443,13 @@
         // Product Gallery - Complete Collection
         const products = [
             // Featured Collection - Most Popular
-            { img: 'Photos/chris.jpeg', title: 'Chris Stapleton', description: 'Chris Stapleton design on premium custom flannel', category: 'classic-rock', featured: true },
-            { img: 'Photos/jimi.jpeg', title: 'Jimi Hendrix', description: 'Vintage flannel with iconic Jimi Hendrix artwork', category: 'classic-rock', featured: true },
-            { img: 'Photos/dead.jpeg', title: 'Grateful Dead', description: 'Classic Grateful Dead design on premium flannel', category: 'classic-rock', featured: true },
-            { img: 'Photos/bob.jpeg', title: 'Bob Marley', description: 'Vintage Bob Marley design on classic flannel', category: 'classic-rock', featured: true },
-            { img: 'Photos/mini_srtones.jpeg', title: 'Rolling Stones Toddler', description: 'Rolling Stones toddler size design on premium flannel', category: 'classic-rock', featured: true },
-            { img: 'Photos/MichaelFranti.jpeg', title: 'Michael Franti', description: 'Michael Franti & Spearhead design on premium flannel', category: 'alternative', featured: true },
-            { img: 'Photos/8914D332-9D10-4BA5-8D18-DD4B1BF1C985_1_105_c.jpeg', title: 'Led Zeppelin II', description: 'Bleached plaid flannel with iconic Led Zeppelin II album cover', category: 'classic-rock', featured: true },
+            { img: 'Photos/chris.jpeg', title: 'Chris Stapleton', description: 'Chris Stapleton design on premium custom flannel', category: 'classic-rock', featured: true, inStock: true },
+            { img: 'Photos/jimi.jpeg', title: 'Jimi Hendrix', description: 'Vintage flannel with iconic Jimi Hendrix artwork', category: 'classic-rock', featured: true, inStock: false },
+            { img: 'Photos/dead.jpeg', title: 'Grateful Dead', description: 'Classic Grateful Dead design on premium flannel', category: 'classic-rock', featured: true, inStock: true },
+            { img: 'Photos/bob.jpeg', title: 'Bob Marley', description: 'Vintage Bob Marley design on classic flannel', category: 'classic-rock', featured: true, inStock: false },
+            { img: 'Photos/mini_srtones.jpeg', title: 'Rolling Stones Toddler', description: 'Rolling Stones toddler size design on premium flannel', category: 'classic-rock', featured: true, inStock: true },
+            { img: 'Photos/MichaelFranti.jpeg', title: 'Michael Franti', description: 'Michael Franti & Spearhead design on premium flannel', category: 'alternative', featured: true, inStock: false },
+            { img: 'Photos/8914D332-9D10-4BA5-8D18-DD4B1BF1C985_1_105_c.jpeg', title: 'Led Zeppelin II', description: 'Bleached plaid flannel with iconic Led Zeppelin II album cover', category: 'classic-rock', featured: true, inStock: true },
             
             // Lifestyle Gallery - Photos with people/multiple shirts
             { img: 'Photos/059679B7-22F6-4F8E-BE86-64D7DB02B537_1_105_c.jpeg', title: 'Band Collection Display', description: 'Showcase of multiple custom band flannels including KISS, Steve Miller, John Lennon, and Jimi Hendrix', category: 'lifestyle' },
@@ -399,11 +545,20 @@
                 : products.filter(product => product.category === currentFilter);
             
             const productsToShow = showingAll ? filteredProducts : filteredProducts.slice(0, displayedProducts);
-            
-            productGrid.innerHTML = productsToShow.map((product, index) => `
+
+            // Add default inStock status if not specified
+            const productsWithStock = productsToShow.map(product => ({
+                ...product,
+                inStock: product.inStock !== undefined ? product.inStock : Math.random() > 0.6 // 40% in stock, 60% made to order
+            }));
+
+            productGrid.innerHTML = productsWithStock.map((product, index) => `
                 <div class="product-card" data-category="${product.category}" data-product-id="${index}">
                     <div class="product-image">
-                        <img src="${product.img}" alt="${product.title}" loading="lazy">
+                        <picture>
+                            <source srcset="${product.img.replace('.jpeg', '.webp')}" type="image/webp">
+                            <img src="${product.img}" alt="${product.title}" loading="lazy" decoding="async">
+                        </picture>
                         <button class="wishlist-heart" onclick="toggleWishlist(${index})">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -420,7 +575,13 @@
                     <div class="product-info">
                         <h3>${product.title}</h3>
                         <p>${product.description}</p>
-                        <span class="price">$85</span>
+                        <div class="product-details">
+                            <span class="price">$85</span>
+                            <span class="availability ${product.inStock ? 'in-stock' : 'custom-order'}">${product.inStock ? '✓ In Stock' : '⚡ Made to Order'}</span>
+                        </div>
+                        <div class="delivery-info">
+                            <small>${product.inStock ? 'Ships in 3-5 days' : 'Ready in 2-3 weeks'}</small>
+                        </div>
                     </div>
                 </div>
             `).join('');

@@ -1536,6 +1536,189 @@ h4 {
     }
 }
 
+/* Product Details & Availability */
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.availability {
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+.availability.in-stock {
+    background: rgba(38, 222, 129, 0.1);
+    color: #26de81;
+    border: 1px solid #26de81;
+}
+
+.availability.custom-order {
+    background: rgba(255, 165, 2, 0.1);
+    color: #FFA502;
+    border: 1px solid #FFA502;
+}
+
+.delivery-info {
+    color: var(--charcoal);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+.delivery-info small {
+    font-size: 0.75rem;
+}
+
+/* Customer Reviews Section */
+.reviews {
+    background: var(--warm-white);
+    padding: 80px 0;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.review-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(212, 184, 150, 0.2);
+    border: 2px solid var(--light-beige);
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.review-stars {
+    color: var(--music-gold);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.review-card p {
+    color: var(--charcoal);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.review-author {
+    color: var(--logo-red);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Policies & Trust Section */
+.policies {
+    background: linear-gradient(135deg, var(--light-beige), var(--warm-white));
+    padding: 80px 0;
+}
+
+.policies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.policy-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(212, 184, 150, 0.2);
+    border: 2px solid var(--light-beige);
+    transition: all 0.3s ease;
+}
+
+.policy-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--logo-red);
+}
+
+.policy-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.policy-card h3 {
+    color: var(--logo-black);
+    margin-bottom: 1rem;
+}
+
+.policy-card p {
+    color: var(--charcoal);
+    line-height: 1.6;
+}
+
+/* Size Guide Section */
+.size-guide {
+    background: var(--cream);
+    padding: 80px 0;
+}
+
+.size-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.size-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.size-info li {
+    background: white;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--logo-red);
+    box-shadow: 0 2px 8px rgba(212, 184, 150, 0.2);
+}
+
+.size-tips p {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--music-gold);
+    box-shadow: 0 2px 8px rgba(212, 184, 150, 0.2);
+}
+
+/* Mobile Responsive for New Sections */
+@media (max-width: 768px) {
+    .reviews-grid,
+    .policies-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .size-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .product-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
 /* Peace, Love, Music Theme Elements */
 .peace-symbol::before {
     content: "☮";
