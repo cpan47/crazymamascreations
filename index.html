@@ -17,22 +17,22 @@
     <meta name="theme-color" content="#DC2626">
     <meta name="msapplication-TileColor" content="#DC2626">
 
-    <title>Crazy Mama's Creations - Custom Band Merchandise & Upcycled Fashion | Centerport, NY</title>
+    <title>Crazy Mamas Creations - Custom Band Merchandise & Upcycled Fashion | Centerport, NY</title>
     <meta name="description" content="Handmade vintage flannel band shirts by Krissy Pangia. Custom rock merchandise featuring Led Zeppelin, Pink Floyd, Grateful Dead & more. Centerport, NY. $85 each.">
     <meta name="keywords" content="vintage band shirts, custom rock merchandise, upcycled flannel, Led Zeppelin shirt, Pink Floyd, Grateful Dead, classic rock clothing, handmade band tees, Centerport NY, vintage rock apparel">
-    <meta name="author" content="Krissy Pangia - Crazy Mama's Creations">
+    <meta name="author" content="Krissy Pangia - Crazy Mamas Creations">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Crazy Mama's Creations - Handmade Vintage Band Shirts">
+    <meta property="og:title" content="Crazy Mamas Creations - Handmade Vintage Band Shirts">
     <meta property="og:description" content="Unique handmade band merchandise on vintage flannel. Custom rock shirts featuring your favorite classic bands. Made by Krissy Pangia in Centerport, NY.">
     <meta property="og:image" content="https://crazymamascreations.love/Photos/Krissy.jpeg">
     <meta property="og:url" content="https://crazymamascreations.love">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Crazy Mama's Creations - Custom Band Merchandise">
+    <meta name="twitter:title" content="Crazy Mamas Creations - Custom Band Merchandise">
     <meta name="twitter:description" content="Handmade vintage flannel band shirts featuring classic rock bands. Custom upcycled clothing by Krissy Pangia.">
     <meta name="twitter:image" content="https://crazymamascreations.love/Photos/Krissy.jpeg">
 
@@ -41,7 +41,7 @@
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "Crazy Mama's Creations",
+        "name": "Crazy Mamas Creations",
         "description": "Handmade vintage band merchandise and upcycled clothing",
         "founder": "Krissy Pangia",
         "address": {
@@ -70,7 +70,7 @@
 
     <link rel="stylesheet" href="styles.css">
     <!-- PayPal SDK -->
-    <script src="https://www.paypal.com/sdk/js?client-id=Ac62NRaB0gPAmZgmD4yImZhYWf8a6Gsd7F0sPVKMInpGCk6TvAUrTMG4J98Ch4PeWWYmcR9m0Zf5nMfb&currency=USD"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=Ac62NRaB0gPAmZgmD4yImZhYWf8a6Gsd7F0sPVKMInpGCk6TvAUrTMG4J98Ch4PeWWYmcR9m0Zf5nMfb&currency=USD&disable-funding=credit,card"></script>
 </head>
 <body>
 
@@ -79,9 +79,9 @@
     <header class="header">
         <nav class="nav">
             <div class="logo">
-                <img src="Photos/logo.png" alt="Crazy Mama's Creations Logo" class="logo-img">
+                <img src="Photos/logo.png" alt="Crazy Mamas Creations Logo" class="logo-img">
                 <div class="logo-text">
-                    <h1>Crazy Mama's Creations</h1>
+                    <h1>Crazy Mamas Creations</h1>
                     <p class="tagline typewriter">Handmade • Upcycled • Rock & Roll</p>
                 </div>
             </div>
@@ -129,6 +129,12 @@
                 <button class="filter-btn" data-filter="alternative">Alternative</button>
                 <button class="filter-btn" data-filter="punk">Punk/Metal</button>
                 <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+                <div class="band-filter">
+                    <label for="bandSelect">Sort by Band:</label>
+                    <select id="bandSelect" class="band-dropdown">
+                        <option value="all">All Bands</option>
+                    </select>
+                </div>
                 <button id="viewAllBtn" class="btn btn-secondary">View All Products</button>
             </div>
 
@@ -150,8 +156,8 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About Crazy Mama's Creations</h2>
-                    <p>Born from a love of music and sustainable fashion, Crazy Mama's Creations transforms vintage flannel shirts into wearable art. Each piece celebrates the timeless appeal of classic bands while giving new life to pre-loved clothing.</p>
+                    <h2>About Crazy Mamas Creations</h2>
+                    <p>Born from a love of music and sustainable fashion, Crazy Mamas Creations transforms vintage flannel shirts into wearable art. Each piece celebrates the timeless appeal of classic bands while giving new life to pre-loved clothing.</p>
                     
                     <p>Every shirt in our collection is hand-selected for quality and character, then carefully customized with high-quality band patches and artwork. From Grateful Dead to Pink Floyd, KISS to alternative icons, we honor the music that shaped generations.</p>
                     
@@ -373,6 +379,22 @@
                     </div>
                 </div>
 
+                <div class="photo-card">
+                    <img src="Photos/BCD1D063-8A12-471D-8752-3B8927F54F70_1_105_c.jpeg" alt="Customers wearing rock band flannels" loading="lazy">
+                    <div class="photo-info">
+                        <h3>Rock Fans Unite</h3>
+                        <p>Three happy customers showing off their Rolling Stones, classic rock, and Hendrix flannels together!</p>
+                    </div>
+                </div>
+
+                <div class="photo-card">
+                    <img src="Photos/E4FD2357-2E63-450D-8C22-61C9AA9DC0B8_1_102_o.jpeg" alt="Collection display rack" loading="lazy">
+                    <div class="photo-info">
+                        <h3>Studio Display Rack</h3>
+                        <p>Our workspace showing Rolling Stones and Grateful Dead designs hanging ready for their new homes</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -402,6 +424,17 @@
                         <div class="contact-method">
                             <strong>Payment Options:</strong>
                             <p>PayPal, Venmo (@crazymamascreations), or contact for alternatives</p>
+                        </div>
+                        <div class="contact-method">
+                            <strong>Follow Us:</strong>
+                            <p>
+                                <a href="https://www.facebook.com/profile.php?id=61583222531618" target="_blank" rel="noopener noreferrer" class="social-link">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg>
+                                    Facebook
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -451,7 +484,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>Crazy Mama's Creations</h3>
+                    <h3>Crazy Mamas Creations</h3>
                     <p>Handmade upcycled band merchandise</p>
                 </div>
                 <div class="footer-links">
@@ -468,9 +501,20 @@
                     <p>Contact us through the form above</p>
                     <p>Custom orders welcome</p>
                 </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61583222531618" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            <span>Facebook</span>
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Crazy Mama's Creations. All rights reserved. | Handmade with ❤️ for music lovers</p>
+                <p>&copy; 2024 Crazy Mamas Creations. All rights reserved. | Handmade with ❤️ for music lovers</p>
             </div>
         </div>
     </footer>
@@ -522,7 +566,6 @@
             { img: 'Photos/3283EB2B-1605-4202-A67F-F56603047084_1_105_c.jpeg', title: 'The Beatles - Abbey Road', description: 'Iconic Abbey Road album cover on bleached plaid flannel', category: 'classic-rock' },
             { img: 'Photos/361EA8EC-9F8B-476A-8172-D776143DE84C_1_102_o.jpeg', title: 'Grateful Dead - Space Your Face', description: 'Psychedelic space design with skull and roses on bleached plaid flannel', category: 'classic-rock' },
             { img: 'Photos/38612D9E-A915-4597-8828-7D9E0107A375_1_102_o.jpeg', title: 'Pink Floyd - Wish You Were Here', description: 'Classic Wish You Were Here album artwork on vintage plaid flannel', category: 'classic-rock' },
-            { img: 'Photos/48CF8237-DAA3-4458-9E90-BF2977984540_1_105_c.jpeg', title: 'Classic Rock Collection Display', description: 'Showcase featuring Grateful Dead, Led Zeppelin, Rolling Stones, and The Who designs', category: 'classic-rock' },
             { img: 'Photos/55995E9E-3BB5-470E-A2B3-8CBEA138ACFB_1_105_c.jpeg', title: 'Bob Dylan - Like A Rolling Stone', description: 'Classic Bob Dylan song reference on bleached flannel', category: 'classic-rock' },
             { img: 'Photos/59BDB081-6BE9-4B8E-ACE0-8ED28BBB963E_1_102_o.jpeg', title: 'Fleetwood Mac - Rumours', description: 'Classic Rumours album cover on vintage plaid flannel', category: 'classic-rock' },
             { img: 'Photos/5A23722F-0FE5-4469-A8C4-3388DEB661B1_1_102_o.jpeg', title: 'Allman Brothers Band - Eat A Peach', description: 'Classic Eat A Peach album cover with psychedelic mushroom artwork on plaid flannel', category: 'classic-rock' },
@@ -546,8 +589,8 @@
             { img: 'Photos/D5FD1E09-F112-4188-BBD0-822D5850CEEF_1_102_o.jpeg', title: 'Allman Brothers Band - Eat A Peach (Blue)', description: 'Allman Brothers Band Eat A Peach album cover with peach artwork on bleached flannel', category: 'classic-rock' },
             { img: 'Photos/D88470E0-B7ED-462B-9743-6075027F0B6E_1_105_c.jpeg', title: 'Elvis Presley - Army Mugshot', description: 'Famous Elvis Presley army mugshot photo on tie-dye flannel', category: 'classic-rock' },
             { img: 'Photos/DE6F3871-DE96-4CA9-B8B0-D4010BAF15E7_1_105_c.jpeg', title: 'Classic Music Heritage', description: 'Classic music heritage on flannel shirt', category: 'classic-rock' },
-            { img: 'Photos/F4C8A58C-0EB8-46DE-842A-F7A5282D05E3_1_105_c.jpeg', title: 'Rock Heritage Collection', description: 'Rock heritage collection piece on flannel', category: 'classic-rock' },
-            { img: 'Photos/FBB9D8E6-C509-4791-AD82-A356992CFB17_1_105_c.jpeg', title: 'Music Collection Special', description: 'Special collection piece featuring unique music art', category: 'classic-rock' },
+            { img: 'Photos/F4C8A58C-0EB8-46DE-842A-F7A5282D05E3_1_105_c.jpeg', title: 'David Bowie - Live Performance', description: 'David Bowie live performance photo on bleached plaid flannel', category: 'classic-rock' },
+            { img: 'Photos/FBB9D8E6-C509-4791-AD82-A356992CFB17_1_105_c.jpeg', title: 'Joni Mitchell - Blue', description: 'Joni Mitchell Blue album artwork on bleached plaid flannel', category: 'classic-rock' },
             
             // Alternative/Grunge Collection  
             { img: 'Photos/26291752-037B-4B51-A567-370B6C609158_1_105_c.jpeg', title: 'Billy Joel - Piano Man', description: 'Billy Joel Piano Man artwork on bleached plaid flannel', category: 'classic-rock' },
@@ -558,34 +601,62 @@
             { img: 'Photos/96E75FF2-F1B3-46BE-AEB3-D0CA48258A1F_1_105_c.jpeg', title: 'Jimi Hendrix - Psychedelic Portrait', description: 'Jimi Hendrix psychedelic artwork with rainbow colors on plaid flannel', category: 'classic-rock' },
             { img: 'Photos/A287B870-A4E9-49E9-BE0D-3EFA7463B0CF_1_102_o.jpeg', title: 'Steely Dan - Rainbow Logo', description: 'Steely Dan rainbow circle logo on bleached plaid flannel', category: 'classic-rock' },
             { img: 'Photos/AB76CC7B-41A7-46B1-A25D-F8402CAF6ECD_1_105_c.jpeg', title: 'Elton John - Classic Portrait', description: 'Elton John classic portrait with sunglasses on bleached plaid flannel', category: 'classic-rock' },
-            { img: 'Photos/B613C6D7-4F5E-4931-A603-1580DF28AECC_1_102_o.jpeg', title: 'Alternative Band Collection', description: 'Alternative band collection on premium flannel', category: 'alternative' },
-            { img: 'Photos/B6D0E959-0CAD-45EA-BFDB-CBEA283FDF2D_1_105_c.jpeg', title: 'Music Festival Collection', description: 'Festival collection design on flannel shirt', category: 'alternative' },
-            { img: 'Photos/BCD1D063-8A12-471D-8752-3B8927F54F70_1_105_c.jpeg', title: 'Alternative Rock Heritage', description: 'Alternative rock heritage on flannel', category: 'alternative' },
-            { img: 'Photos/C8EC0DC8-0B02-44B7-AA5A-91DACD172A9C_1_105_c.jpeg', title: 'Alternative Music Collection', description: 'Alternative music collection on flannel', category: 'alternative' },
-            { img: 'Photos/D8A8C677-783E-4AA9-81B5-0893ECA3B4F6_1_105_c.jpeg', title: 'Alternative Band Art', description: 'Alternative band artwork on flannel', category: 'alternative' },
-            { img: 'Photos/E4FD2357-2E63-450D-8C22-61C9AA9DC0B8_1_102_o.jpeg', title: 'Alternative Music Art', description: 'Alternative music artwork on flannel', category: 'alternative' },
-            { img: 'Photos/E94557B7-9196-4061-9DE3-E160AF4A4234_1_105_c.jpeg', title: 'Music Festival Style', description: 'Festival styling on comfortable flannel', category: 'alternative' },
-            { img: 'Photos/F5337D68-9426-41BC-AB36-687DBEDA1335_1_102_o.jpeg', title: 'Alternative Rock Style', description: 'Alternative rock styling on quality flannel', category: 'alternative' },
+            { img: 'Photos/B613C6D7-4F5E-4931-A603-1580DF28AECC_1_102_o.jpeg', title: 'Grateful Dead - Fare Thee Well', description: 'Grateful Dead Fare Thee Well skull and roses design on tie-dye plaid flannel', category: 'classic-rock' },
+            { img: 'Photos/B6D0E959-0CAD-45EA-BFDB-CBEA283FDF2D_1_105_c.jpeg', title: 'Led Zeppelin - US Tour 1977', description: 'Led Zeppelin United States of America 1977 tour with swan logo on bleached plaid flannel', category: 'classic-rock' },
+            { img: 'Photos/C8EC0DC8-0B02-44B7-AA5A-91DACD172A9C_1_105_c.jpeg', title: 'Rolling Stones - Tongue Logo', description: 'Classic Rolling Stones tongue and lips logo on tie-dye plaid flannel', category: 'classic-rock' },
+            { img: 'Photos/D8A8C677-783E-4AA9-81B5-0893ECA3B4F6_1_105_c.jpeg', title: 'Grateful Dead - Skull & Roses Denim', description: 'Grateful Dead skull and roses design on vintage denim jacket', category: 'classic-rock' },
+            { img: 'Photos/E94557B7-9196-4061-9DE3-E160AF4A4234_1_105_c.jpeg', title: 'Sublime - Sun Logo', description: 'Sublime band sun logo design on bleached plaid flannel', category: 'alternative' },
+            { img: 'Photos/F5337D68-9426-41BC-AB36-687DBEDA1335_1_102_o.jpeg', title: 'Bruce Springsteen - Born in the USA', description: 'Bruce Springsteen Born in the USA album artwork on bleached plaid flannel', category: 'classic-rock' },
             
             // Punk/Metal Collection
-            { img: 'Photos/297A2DA1-BB95-4F9D-B5EA-27D32D9D7184_1_105_c.jpeg', title: 'Punk Rock Style', description: 'Edgy punk band design on distressed flannel', category: 'punk' },
-            { img: 'Photos/2C5988F7-E5D4-461B-BC7B-71EEDE439109_1_105_c.jpeg', title: 'Iconic Bands Collection Display', description: 'Showcase featuring Grateful Dead, Pink Floyd, Nirvana, Woodstock, and Bob Marley designs', category: 'lifestyle' },
-            { img: 'Photos/4DB8A0F7-8220-4534-9904-4EFF7336A119_1_105_c.jpeg', title: 'Punk Rock Heritage', description: 'Punk rock heritage design on distressed flannel', category: 'punk' },
-            { img: 'Photos/8318945C-66DC-4028-BAFD-75A70DEDC894_1_105_c.jpeg', title: 'Punk Music Design', description: 'Punk music design on distressed flannel shirt', category: 'punk' },
-            { img: 'Photos/A3517BAB-09A9-439E-8E94-6D7F61819699_1_105_c.jpeg', title: 'Punk Rock Art', description: 'Punk rock artwork on distressed flannel', category: 'punk' },
-            { img: 'Photos/DABBDEC0-3093-465E-B401-EBD00AAD05CB_1_105_c.jpeg', title: 'Punk Rock Collection', description: 'Punk rock collection design on flannel', category: 'punk' },
+            { img: 'Photos/297A2DA1-BB95-4F9D-B5EA-27D32D9D7184_1_105_c.jpeg', title: 'Janis Joplin - Wilder & More Magical', description: 'Janis Joplin "Wilder & More Magical Than Ever" vintage poster on tie-dye flannel', category: 'classic-rock' },
+            { img: 'Photos/4DB8A0F7-8220-4534-9904-4EFF7336A119_1_105_c.jpeg', title: 'Rolling Stones - American Tour', description: 'Rolling Stones American Tour with classic tongue logo on red plaid flannel - customer photo', category: 'lifestyle' },
+            { img: 'Photos/8318945C-66DC-4028-BAFD-75A70DEDC894_1_105_c.jpeg', title: 'Fleetwood Mac - Rumours', description: 'Fleetwood Mac Rumours album cover on bleached red plaid flannel', category: 'classic-rock' },
+            { img: 'Photos/A3517BAB-09A9-439E-8E94-6D7F61819699_1_105_c.jpeg', title: 'Grateful Dead - Sunshine Daydream', description: 'Grateful Dead Sunshine Daydream with sun and lightning bolt logo on green plaid flannel', category: 'classic-rock' },
+            { img: 'Photos/DABBDEC0-3093-465E-B401-EBD00AAD05CB_1_105_c.jpeg', title: 'Grateful Dead - Steady On Heart Tree', description: 'Grateful Dead "Steady On" anatomical heart with tree design on denim jacket', category: 'classic-rock' },
             
         ];
 
         let displayedProducts = 6;
         let currentFilter = 'all';
+        let currentBandFilter = 'all';
         let showingAll = false;
+
+        // Extract band names from product titles
+        function getBandName(title) {
+            const bandMatch = title.split(' - ')[0];
+            return bandMatch || title.split(' ')[0];
+        }
+
+        // Populate band dropdown
+        function populateBandDropdown() {
+            const bandSelect = document.getElementById('bandSelect');
+            const allBands = [...new Set(products.map(product => getBandName(product.title)))].sort();
+
+            allBands.forEach(band => {
+                const option = document.createElement('option');
+                option.value = band;
+                option.textContent = band;
+                bandSelect.appendChild(option);
+            });
+        }
 
         function renderProducts() {
             const productGrid = document.querySelector('.product-grid');
-            const filteredProducts = currentFilter === 'all' 
-                ? products 
-                : products.filter(product => product.category === currentFilter);
+
+            let filteredProducts = products;
+
+            // Filter by category
+            if (currentFilter !== 'all') {
+                filteredProducts = filteredProducts.filter(product => product.category === currentFilter);
+            }
+
+            // Filter by band
+            if (currentBandFilter !== 'all') {
+                filteredProducts = filteredProducts.filter(product =>
+                    getBandName(product.title) === currentBandFilter
+                );
+            }
             
             const productsToShow = showingAll ? filteredProducts : filteredProducts.slice(0, displayedProducts);
 
@@ -666,6 +737,22 @@
                 showingAll = false;
                 renderProducts();
             });
+        });
+
+        // Band filter functionality
+        document.getElementById('bandSelect').addEventListener('change', (e) => {
+            currentBandFilter = e.target.value;
+            displayedProducts = 6;
+            showingAll = false;
+
+            // Reset category filter when filtering by band
+            if (currentBandFilter !== 'all') {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector('[data-filter="all"]').classList.add('active');
+                currentFilter = 'all';
+            }
+
+            renderProducts();
         });
 
         // Load more functionality
@@ -868,29 +955,32 @@
             const modalImage = document.getElementById('modalImage');
             const modalTitle = document.getElementById('modalTitle');
             const modalDescription = document.getElementById('modalDescription');
-            const modalQuickOrder = document.getElementById('modalQuickOrder');
+            const modalPaypalContainer = document.getElementById('modalPaypalContainer');
             const modalWishlist = document.getElementById('modalWishlist');
-            
+
             // Set modal content
             modalImage.src = product.img;
             modalImage.alt = product.title;
             modalTitle.textContent = product.title;
             modalDescription.textContent = product.description;
-            
-            // Set up button handlers
-            modalQuickOrder.onclick = () => {
-                quickOrder(product.title);
-                closeModal();
-            };
-            
+
+            // Clear and create PayPal button in modal
+            modalPaypalContainer.innerHTML = '';
+            if (typeof paypal !== 'undefined') {
+                createPayPalButton(modalPaypalContainer, product.title);
+            } else {
+                modalPaypalContainer.innerHTML = '<button class="btn btn-primary" onclick="alert(\'PayPal is loading. Please try again in a moment.\')">Quick Order - $85</button>';
+            }
+
+            // Set up wishlist button handler
             modalWishlist.onclick = () => {
                 toggleWishlist(productIndex);
                 updateModalWishlistButton(productIndex);
             };
-            
+
             // Update wishlist button state
             updateModalWishlistButton(productIndex);
-            
+
             // Show modal
             modal.classList.add('show');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
@@ -900,6 +990,44 @@
             const modal = document.getElementById('photoModal');
             modal.classList.remove('show');
             document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Simple notification function
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'info' ? '#3B82F6' : '#10B981'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                z-index: 10000;
+                font-weight: 600;
+                max-width: 300px;
+                animation: slideIn 0.3s ease-out;
+            `;
+            notification.textContent = message;
+
+            // Add slide-in animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+
+            document.body.appendChild(notification);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideIn 0.3s ease-out reverse';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
         }
 
         function updateModalWishlistButton(productIndex) {
@@ -932,6 +1060,7 @@
 
         // Initialize gallery
         function initGallery() {
+            populateBandDropdown();
             renderProducts();
             updateWishlistHearts();
         }
@@ -971,7 +1100,7 @@
                     <h2 id="modalTitle"></h2>
                     <p id="modalDescription"></p>
                     <div class="modal-actions">
-                        <button id="modalQuickOrder" class="btn btn-primary">Quick Order</button>
+                        <div id="modalPaypalContainer" class="modal-paypal-container"></div>
                         <button id="modalWishlist" class="btn btn-secondary">♥ Add to Wishlist</button>
                     </div>
                     <div class="modal-details">

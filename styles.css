@@ -444,6 +444,46 @@ h4 {
     box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
 }
 
+.band-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.band-filter label {
+    font-weight: 600;
+    color: var(--logo-black);
+    white-space: nowrap;
+}
+
+.band-dropdown {
+    padding: 10px 15px;
+    border: 2px solid var(--logo-beige);
+    border-radius: 25px;
+    background: var(--warm-white);
+    color: var(--logo-black);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.band-dropdown:hover,
+.band-dropdown:focus {
+    border-color: var(--logo-red);
+    outline: none;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.2);
+}
+
+@media (max-width: 768px) {
+    .band-filter {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}
+
 /* Mobile-First CSS Grid Layout */
 .product-grid {
     display: grid;
@@ -1360,6 +1400,63 @@ h4 {
     border-top: 1px solid var(--charcoal);
     color: var(--logo-beige);
     font-style: italic;
+}
+
+/* Social Media Styles */
+.footer-social h4 {
+    margin-bottom: 1rem;
+    color: var(--cream);
+    font-family: var(--font-heading);
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--logo-beige);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.social-links a:hover {
+    color: var(--logo-red);
+    background: rgba(220, 38, 38, 0.1);
+    transform: translateX(5px);
+}
+
+.social-links svg {
+    flex-shrink: 0;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--logo-red);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.25rem;
+    border-radius: 6px;
+}
+
+.social-link:hover {
+    color: var(--logo-black);
+    background: var(--logo-red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.social-link svg {
+    flex-shrink: 0;
 }
 
 /* Responsive Design */
