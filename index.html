@@ -69,6 +69,11 @@
     </script>
 
     <link rel="stylesheet" href="styles.css">
+
+    <!-- CMS Configuration -->
+    <script src="cms-config.js"></script>
+    <script src="cms-loader.js"></script>
+
     <!-- PayPal SDK -->
     <script src="https://www.paypal.com/sdk/js?client-id=Ac62NRaB0gPAmZgmD4yImZhYWf8a6Gsd7F0sPVKMInpGCk6TvAUrTMG4J98Ch4PeWWYmcR9m0Zf5nMfb&currency=USD&disable-funding=credit,card"></script>
 </head>
@@ -1059,7 +1064,33 @@
         });
 
         // Initialize gallery
-        function initGallery() {
+        async function initGallery() {
+            // Show loading indicator
+            const productGrid = document.querySelector('.product-grid');
+            productGrid.innerHTML = '<div class="loading-indicator">Loading products...</div>';
+
+            try {
+                // Load products from CMS (Airtable or Google Sheets)
+                if (typeof loadProducts === 'function') {
+                    const cmsProducts = await loadProducts();
+                    if (cmsProducts && cmsProducts.length > 0) {
+                        // Replace hardcoded products with CMS data
+                        products = cmsProducts;
+                        console.log('✓ Loaded', products.length, 'products from CMS');
+                    } else {
+                        console.warn('⚠ No products loaded from CMS, using hardcoded fallback');
+                        // products array is already defined with fallback data
+                    }
+                } else {
+                    console.warn('⚠ CMS loader not available, using hardcoded products');
+                }
+            } catch (error) {
+                console.error('✗ Error loading products from CMS:', error);
+                console.log('Using hardcoded fallback products');
+                // products array is already defined with fallback data
+            }
+
+            // Initialize the gallery with loaded products
             populateBandDropdown();
             renderProducts();
             updateWishlistHearts();
