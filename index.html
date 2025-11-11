@@ -683,7 +683,7 @@
                         <div class="product-overlay">
                             <button class="view-btn" onclick="openModal(${index})">View Details</button>
                             <div class="product-actions">
-                                <div class="paypal-button-container" data-product-title="${product.title}"></div>
+                                <div class="paypal-button-container" data-product-title="${product.title}" data-product-price="${product.price || 85}"></div>
                                 <button class="custom-order-btn" onclick="customOrder('${product.title}')">Custom Size/Request</button>
                             </div>
                         </div>
@@ -692,7 +692,7 @@
                         <h3>${product.title}</h3>
                         <p>${product.description}</p>
                         <div class="product-details">
-                            <span class="price">$85</span>
+                            <span class="price">$${product.price || 85}</span>
                             <span class="availability ${product.inStock ? 'in-stock' : 'custom-order'}">${product.inStock ? '✓ In Stock' : '⚡ Made to Order'}</span>
                         </div>
                         <div class="delivery-info">
@@ -725,8 +725,9 @@
             setTimeout(() => {
                 document.querySelectorAll('.paypal-button-container').forEach(container => {
                     const productTitle = container.getAttribute('data-product-title');
+                    const productPrice = parseFloat(container.getAttribute('data-product-price')) || 85;
                     if (container.innerHTML === '') {  // Only create if not already created
-                        createPayPalButton(container, productTitle);
+                        createPayPalButton(container, productTitle, productPrice);
                     }
                 });
             }, 100);
@@ -873,10 +874,10 @@
         }
 
         // PayPal button creation
-        function createPayPalButton(container, productTitle) {
+        function createPayPalButton(container, productTitle, productPrice = 85) {
             if (typeof paypal === 'undefined') {
                 // PayPal SDK not loaded, show alternative
-                container.innerHTML = '<button class="paypal-alternative" onclick="showPaymentOptions(\'' + productTitle + '\')">Buy Now - $85</button>';
+                container.innerHTML = '<button class="paypal-alternative" onclick="showPaymentOptions(\'' + productTitle + '\', ' + productPrice + ')">Buy Now - $' + productPrice + '</button>';
                 return;
             }
 
@@ -885,7 +886,7 @@
                     return actions.order.create({
                         purchase_units: [{
                             amount: {
-                                value: '85.00'
+                                value: productPrice.toFixed(2)
                             },
                             description: productTitle + ' - Vintage Band Flannel Shirt'
                         }]
@@ -905,7 +906,7 @@
                                 paypal_order_id: data.orderID,
                                 customer_name: details.payer.name.given_name + ' ' + details.payer.name.surname,
                                 customer_email: details.payer.email_address,
-                                amount: '$85.00',
+                                amount: '$' + productPrice.toFixed(2),
                                 message: 'PAID ORDER - Please contact customer for size and shipping details.'
                             })
                         });
@@ -918,8 +919,8 @@
             }).render(container);
         }
 
-        function showPaymentOptions(productTitle) {
-            const message = `Ready to buy ${productTitle} for $85?\n\nPayment Options:\n• PayPal: Available above\n• Venmo: @crazymamascreations\n• Contact us for other payment methods\n\nAfter payment, we'll contact you for size and shipping!`;
+        function showPaymentOptions(productTitle, productPrice = 85) {
+            const message = `Ready to buy ${productTitle} for $${productPrice}?\n\nPayment Options:\n• PayPal: Available above\n• Venmo: @crazymamascreations\n• Contact us for other payment methods\n\nAfter payment, we'll contact you for size and shipping!`;
             alert(message);
         }
 
@@ -972,9 +973,9 @@
             // Clear and create PayPal button in modal
             modalPaypalContainer.innerHTML = '';
             if (typeof paypal !== 'undefined') {
-                createPayPalButton(modalPaypalContainer, product.title);
+                createPayPalButton(modalPaypalContainer, product.title, product.price || 85);
             } else {
-                modalPaypalContainer.innerHTML = '<button class="btn btn-primary" onclick="alert(\'PayPal is loading. Please try again in a moment.\')">Quick Order - $85</button>';
+                modalPaypalContainer.innerHTML = '<button class="btn btn-primary" onclick="alert(\'PayPal is loading. Please try again in a moment.\')">Quick Order - $' + (product.price || 85) + '</button>';
             }
 
             // Set up wishlist button handler
