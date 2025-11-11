@@ -193,8 +193,13 @@ function clearProductCache() {
 
 // Export for use in other scripts
 if (typeof module !== 'undefined' && module.exports) {
+    // Node.js environment
     module.exports = {
         loadProducts,
         clearProductCache
     };
+} else {
+    // Browser environment - make functions globally available
+    window.loadProducts = loadProducts;
+    window.clearProductCache = clearProductCache;
 }
