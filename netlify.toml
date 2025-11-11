@@ -1,0 +1,30 @@
+# Netlify Configuration for Crazy Mamas Creations
+
+[build]
+  # No build command needed for static site
+  publish = "."
+
+  # Functions directory
+  functions = "netlify/functions"
+
+# Environment variables (set these in Netlify dashboard)
+# AIRTABLE_API_KEY = your_token_here
+# AIRTABLE_BASE_ID = your_base_id_here
+# AIRTABLE_TABLE_NAME = Products
+
+# Redirect rules
+[[redirects]]
+  # SPA fallback (if needed)
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"

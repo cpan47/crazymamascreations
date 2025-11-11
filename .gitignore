@@ -1,5 +1,5 @@
-# Local configuration with API credentials
-cms-config.local.js
+# Netlify
+.netlify/
 
 # Node modules (if any)
 node_modules/
@@ -14,3 +14,7 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Local development
+.env
+.env.local

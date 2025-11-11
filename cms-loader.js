@@ -52,55 +52,29 @@ function setCachedProducts(products) {
 
 // ===== AIRTABLE FETCHER =====
 async function fetchFromAirtable() {
-    debugLog('Fetching products from Airtable...');
+    debugLog('Fetching products from Airtable via Netlify Function...');
 
-    const config = typeof AIRTABLE_CONFIG !== 'undefined' ? AIRTABLE_CONFIG : {};
+    // Call Netlify Function instead of directly calling Airtable
+    // This keeps API credentials secure on the server
+    const functionUrl = '/.netlify/functions/get-products';
 
-    if (!config.apiKey || !config.baseId || !config.tableName) {
-        throw new Error('Airtable configuration is incomplete. Please check cms-config.js');
-    }
-
-    const url = `https://api.airtable.com/v0/${config.baseId}/${encodeURIComponent(config.tableName)}${config.viewName ? `?view=${encodeURIComponent(config.viewName)}` : ''}`;
-
-    const response = await fetch(url, {
-        headers: {
-            'Authorization': `Bearer ${config.apiKey}`
-        }
-    });
+    const response = await fetch(functionUrl);
 
     if (!response.ok) {
-        throw new Error(`Airtable API error: ${response.status} ${response.statusText}`);
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `Function error: ${response.status} ${response.statusText}`);
     }
 
     const data = await response.json();
-    debugLog('Received', data.records.length, 'products from Airtable');
 
-    // Transform Airtable records to our product format
-    return data.records.map(record => {
-        const fields = record.fields;
+    if (!data.success || !data.products) {
+        throw new Error('Invalid response from Netlify Function');
+    }
 
-        // Get image URL from Airtable attachment or use Photos folder path
-        let imagePath;
-        if (fields.Image && fields.Image.length > 0) {
-            // Use Airtable hosted image
-            imagePath = fields.Image[0].url;
-        } else if (fields.ImagePath) {
-            // Use Photos folder
-            imagePath = `Photos/${fields.ImagePath}`;
-        } else {
-            imagePath = 'Photos/placeholder.jpg'; // Fallback
-        }
+    debugLog('Received', data.count, 'products from Airtable');
 
-        return {
-            img: imagePath,
-            title: fields.Title || 'Untitled Product',
-            description: fields.Description || '',
-            category: (fields.Category || 'classic-rock').toLowerCase(),
-            price: fields.Price || 85,
-            inStock: fields.InStock === true,
-            featured: fields.Featured === true
-        };
-    });
+    // Products are already in the correct format from the function
+    return data.products;
 }
 
 // ===== GOOGLE SHEETS FETCHER =====

@@ -6,14 +6,13 @@
 const CMS_SOURCE = 'airtable'; // Options: 'airtable' or 'sheets'
 
 // ===== AIRTABLE CONFIGURATION =====
-// To get these values, follow the guide in CMS-SETUP-GUIDE.md
+// Credentials are loaded from Netlify Functions (for security)
+// The actual API keys are stored in Netlify Environment Variables
 const AIRTABLE_CONFIG = {
-    // Get your Personal Access Token from: https://airtable.com/create/tokens
-    apiKey: 'YOUR_AIRTABLE_PERSONAL_ACCESS_TOKEN_HERE',
-
-    // Get your Base ID from the Airtable API docs: https://airtable.com/api
-    // It starts with "app" (e.g., "appXXXXXXXXXXXXXX")
-    baseId: 'YOUR_AIRTABLE_BASE_ID_HERE',
+    // These will be fetched from Netlify Functions
+    // Do NOT put real credentials here!
+    apiKey: null, // Loaded from Netlify
+    baseId: null, // Loaded from Netlify
 
     // The name of your products table (usually "Products")
     tableName: 'Products',
