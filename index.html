@@ -1066,21 +1066,26 @@
 
         // Initialize gallery
         async function initGallery() {
-            // Show loading indicator
-            const productGrid = document.querySelector('.product-grid');
-            productGrid.innerHTML = '<div class="loading-indicator">Loading products...</div>';
+            // Show products immediately with hardcoded data for fast initial load
+            populateBandDropdown();
+            renderProducts();
+            updateWishlistHearts();
 
+            // Then load from CMS in the background and update
             try {
-                // Load products from CMS (Airtable or Google Sheets)
                 if (typeof loadProducts === 'function') {
                     const cmsProducts = await loadProducts();
                     if (cmsProducts && cmsProducts.length > 0) {
-                        // Replace hardcoded products with CMS data
+                        // Replace with fresh CMS data
                         products = cmsProducts;
                         console.log('✓ Loaded', products.length, 'products from CMS');
+
+                        // Re-render with updated data
+                        populateBandDropdown();
+                        renderProducts();
+                        updateWishlistHearts();
                     } else {
                         console.warn('⚠ No products loaded from CMS, using hardcoded fallback');
-                        // products array is already defined with fallback data
                     }
                 } else {
                     console.warn('⚠ CMS loader not available, using hardcoded products');
@@ -1088,13 +1093,7 @@
             } catch (error) {
                 console.error('✗ Error loading products from CMS:', error);
                 console.log('Using hardcoded fallback products');
-                // products array is already defined with fallback data
             }
-
-            // Initialize the gallery with loaded products
-            populateBandDropdown();
-            renderProducts();
-            updateWishlistHearts();
         }
 
         // Run immediately if DOM is already loaded, otherwise wait for DOMContentLoaded
