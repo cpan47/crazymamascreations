@@ -36,9 +36,9 @@ const SHEETS_CONFIG = {
 };
 
 // ===== ADVANCED SETTINGS =====
-// Cache duration in milliseconds (default: 5 minutes)
+// Cache duration in milliseconds (default: 30 minutes)
 // Set to 0 to disable caching (products will fetch every page load)
-const CACHE_DURATION = 300000; // 5 minutes = 300000 ms
+const CACHE_DURATION = 1800000; // 30 minutes = 1800000 ms
 
 // Enable debug logging to browser console
 const DEBUG_MODE = false;
